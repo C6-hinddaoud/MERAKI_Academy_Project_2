@@ -19,20 +19,15 @@ let arrayBooks=[{category:"Historical Fiction",id:1,description:"description1",T
 ]
 
 
- 
- 
- 
-const divSearch=$ (`<div class="searcDiv"></div>`)
-const inputSearch =$ (`<input class="inpSearch" type="text" name="" id="">`)
-const buttonSearch=$ (`<button class=".btnSearch">search</button>`)
-divSearch.append()
 
-divSearch.append(inputSearch)
-divSearch.append(buttonSearch)
+ 
+ 
+
  
  
  
- 
+
+
  
  
  const conten=  $(".contener")
@@ -47,7 +42,7 @@ divSearch.append(buttonSearch)
  //content div
  conten.append(contentDiv)
  conten.append(footerDiv)
- conten.append(divSearch)
+ 
  //===============================================================================================
  //searchFunction
 
@@ -55,6 +50,9 @@ divSearch.append(buttonSearch)
  
 
 
+
+
+ 
 
 
 
@@ -120,73 +118,6 @@ $(".content").empty()
     
 
 }
-
-
-
-const searchInput=$(".inpSearch").val()
-
-
- const btnSearcgEvent=$(".btnSearch")
- btnSearcgEvent.on("click",()=>{
-    console.log("hind")
-   
-    searchFun(searchInput)
- } )
-
-
-
-
-
-
-
-const funser=()=>{
-
-    for(i=0; i<searchFun().length ;i++)
-    $(".content").empty()
-
-    const content=$(".content")
-
-
-     const DivContent= $(`<div class="DivContent ">
-     </div>`)
-
-     const imgDiv=$(`<img>`)
-     // <div><img class=imgbook></div>
-     imgDiv.attr('src',arrayBooks[i].src)
-     DivContent.append(imgDiv)
-     const DiveTitle=$(`<div></div>`)
-     const title=$(`<h3></h3`)
-     DivContent.append(DiveTitle)
-     DiveTitle.append(title)
-     title.text(arrayBooks[i].Title)
-     const DivePrice=$(`<div></div>`)
-     const price=$(`<h3></h3`)
-     DivContent.append(DivePrice)
-     DivePrice.append(price)
-     price.text(arrayBooks[i].price)
-     
-
-
-
-     const DiveSeeMore=$(`<div> </div>`)
-     const btnSeeMore=$(`<button>see more</button>`)
-     DivContent.append(DiveSeeMore)
-     DiveSeeMore.append(btnSeeMore)
-     
-
-
-
-
-
-
-     content.append(DivContent)
-
-
-
-
-
-}
-
 
 
 
@@ -291,9 +222,31 @@ return arrayBooks.filter((book,index)=>{
 
 
 
+///////////search
+
+const divSearch=$ (`<div class="searcDiv"></div>`)
+const inputSearch =$ (`<input class="inpSearch" type="text" name="" id="">`)
+const buttonSearch=$ (`<button class=".btnSearch">search</button>`)
+divSearch.append()
+
+divSearch.append(inputSearch)
+divSearch.append(buttonSearch)
+conten.append(divSearch)
+
+
+ let searchInput=$(".inpSearch").val()
+
+
+  let btnSearcgEvent=$(".btnSearch")
+  buttonSearch.on("click",function( ){
+    console.log("hind")
+   
+    searchFun($(".inpSearch").val())
+ } )
 
 
 
+ ///////////search
 
 
 
@@ -368,7 +321,6 @@ const cat3= $(`<div class="spC"><h3>Classics</h3> </div>`)
 
 
 
-
  const can1= $(`<div class="conBook1"> AB</div>`)
  const can2= $(`<div class="conBook2"> BB</div>`)
  const can3= $(`<div class="conBook3"> CB</div>`)
@@ -389,6 +341,5 @@ const cat3= $(`<div class="spC"><h3>Classics</h3> </div>`)
  headDiv.append( head3)
  headDiv.append( head4)
  headDiv.append( head5)
-
 
 
