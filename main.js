@@ -1,21 +1,21 @@
-let arrayBooks=[{category:"Historical Fiction",id:1,description:"description1",Title:"title1",price:5 +"jd",src:"./images/book3.png"}
-,{category:"Historical Fiction",id:2,description:"description1",Title:"title1",price:5 +"jd",src:"./images/book4.png"}
+let arrayBooks=[{category:"Historical Fiction",id:1,description:"description1",Title:"title1",price:5 +" jd",src:"./images/book3.png"}
+,{category:"Historical Fiction",id:2,description:"description1",Title:"title1",price:5 +" jd",src:"./images/book4.png"}
 
 
 
 
-,{category:"Adventure",id:3,description:"description2",Title:"title2",price:15 +"jd",src: "./images/book1.png"}
+,{category:"Adventure",id:3,description:"description2",Title:"title2",price:15 +" jd",src: "./images/book1.png"}
 
-,{category:"Adventure",id:4,description:"description2",Title:"title2",price:15 +"jd",src:"./images/book2.png"}
+,{category:"Adventure",id:4,description:"description2",Title:"title2",price:15 +" jd",src:"./images/book2.png"}
 
-,{category:"Classics",id:5,description:"description3",Title:"title3",price:25 +"jd",src:"./images/book5.png"}
+,{category:"Classics",id:5,description:"description3",Title:"title3",price:25 +" jd",src:"./images/book5.png"}
 
 
-,{category:"Classics",id:6,description:"description3",Title:"title3",price:25 +"jd",src:"./images/book7.png"}
+,{category:"Classics",id:6,description:"description3",Title:"title3",price:25 +" jd",src:"./images/book7.png"}
 
-,{category:"Literary Fiction",id:7,description:"description4",Title:"title4",price:35 +"jd",src:"./images/book8.png"}
+,{category:"Literary Fiction",id:7,description:"description4",Title:"title4",price:35 +" jd",src:"./images/book8.png"}
 
-,{category:"Literary Fiction",id:8,description:"description4",Title:"title4",price:35 +"jd",src:"./images/book4.png"}
+,{category:"Literary Fiction",id:8,description:"description4",Title:"titnew",price:35 +" jd",src:"./images/book4.png"}
 ]
 
 
@@ -49,6 +49,7 @@ arrayhistory=[]
 arrayAdven=[]
 const mainFun=(categ)=>{
     //debugger
+    $(".content").empty()
     for(i=0;i<arrayBooks.length;i++){
     if(arrayBooks[i].category==categ){
         content=$(".content")
@@ -63,13 +64,27 @@ const mainFun=(categ)=>{
         const title=$(`<h3></h3`)
         DivContent.append(DiveTitle)
         DiveTitle.append(title)
-        // <div>     </div>
-        // <div>     </div>
-        // <div>     </div>
+        title.text(arrayBooks[i].Title)
+        const DivePrice=$(`<div></div>`)
+        const price=$(`<h3></h3`)
+        DivContent.append(DivePrice)
+        DivePrice.append(price)
+        price.text(arrayBooks[i].price)
         
+
+
+
+        const DiveSeeMore=$(`<div> </div>`)
+        const btnSeeMore=$(`<button>see more</button>`)
+        DivContent.append(DiveSeeMore)
+        DiveSeeMore.append(btnSeeMore)
         
-        // const imgbook=$(".imgbook")
-        // imgbook.src=arrayBooks[i].src
+
+
+
+
+
+
         content.append(DivContent)
        
        // console.log(arrayBooks[i])
@@ -145,39 +160,61 @@ return arrayBooks.filter((book,index)=>{
 //=========histoy book function
 const cat1= $(`<div class="spA"><h3 class="hi">Historical Fiction</h3> </div>`)
 
- const HistoricalEvent=$(".spA")
- HistoricalEvent.on("click",function(){
-    mainFun("Historical Fiction")
- } )
+ 
  
  //=========adventure book function
  
- const cat2= $(`<div class="spB"><h3>Adventure<h3> </div>`)
  
-
- const AdventureEvent=$(".spB")
- HistoricalEvent.on("click",function(){
-    mainFun("Adventure")
- } )
-
 //  const adventEvent=$(".spA")
 //  adventEvent.on("click",mainFun("Adventure"))
 
 
 
+const cat2= $(`<div class="spB"><h3>Adventure</h3> </div>`)
+
+const cat3= $(`<div class="spC"><h3>Classics</h3> </div>`)
+ 
+ const cat4= $(`<div class="spD"> <h3>Literary Fiction</h3></div>`)
 
 
+ 
 
- const cat3= $(`<div class="spC"><h3>Classics<h3> </div>`)
- const ClassicsEvent=$(".spC")
- HistoricalEvent.on("click",function(){
-    mainFun("Classics")
- } )
- const cat4= $(`<div class="spD"> <h3>Literary Fiction<h3></div>`)
  spDiv.append(cat1)
  spDiv.append(cat2)
  spDiv.append(cat3)
  spDiv.append(cat4)
+ const HistoricalEvent=$(".spA")
+ HistoricalEvent.on("click",()=>{
+    console.log("hind")
+   
+    mainFun("Historical Fiction")
+ } )
+
+
+
+ 
+ 
+
+ const AdventureEvent=$(".spB")
+ AdventureEvent.on("click",function(){
+    mainFun("Adventure")
+ } )
+
+
+ 
+ const ClassicsEvent=$(".spC")
+ ClassicsEvent.on("click",function(){
+    mainFun("Classics")
+ } )
+
+ const FictionEvent=$(".spD")
+ FictionEvent.on("click",function(){
+    mainFun("Literary Fiction")
+ } )
+
+
+
+
 
 
  const can1= $(`<div class="conBook1"> AB</div>`)
