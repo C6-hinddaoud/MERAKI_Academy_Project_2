@@ -22,7 +22,13 @@ let arrayBooks=[{category:"Historical Fiction",id:1,description:"description1",T
  
  
  
- 
+const divSearch=$ (`<div class="searcDiv"></div>`)
+const inputSearch =$ (`<input class="inpSearch" type="text" name="" id="">`)
+const buttonSearch=$ (`<button class=".btnSearcg">search</button>`)
+divSearch.append()
+
+divSearch.append(inputSearch)
+divSearch.append(buttonSearch)
  
  
  
@@ -41,8 +47,91 @@ let arrayBooks=[{category:"Historical Fiction",id:1,description:"description1",T
  //content div
  conten.append(contentDiv)
  conten.append(footerDiv)
- 
+ conten.append(divSearch)
  //===============================================================================================
+ //searchFunction
+ let T=""
+const  searchFun=(m)=>{
+//debugger
+    for(i=0;i<arrayBooks.length;i++){
+     return  arrayBooks.filter((book,index)=>{
+
+        return  m===book.Title
+
+ 
+        $(".content").empty()
+
+        const content=$(".content")
+  
+  
+         const DivContent= $(`<div class="DivContent ">
+         </div>`)
+  
+         const imgDiv=$(`<img>`)
+         // <div><img class=imgbook></div>
+         imgDiv.attr('src',arrayBooks[i].src)
+         DivContent.append(imgDiv)
+         const DiveTitle=$(`<div></div>`)
+         const title=$(`<h3></h3`)
+         DivContent.append(DiveTitle)
+         DiveTitle.append(title)
+         title.text(arrayBooks[i].Title)
+         const DivePrice=$(`<div></div>`)
+         const price=$(`<h3></h3`)
+         DivContent.append(DivePrice)
+         DivePrice.append(price)
+         price.text(arrayBooks[i].price)
+         
+  
+  
+  
+         const DiveSeeMore=$(`<div> </div>`)
+         const btnSeeMore=$(`<button>see more</button>`)
+         DivContent.append(DiveSeeMore)
+         DiveSeeMore.append(btnSeeMore)
+         
+  
+  
+  
+  
+  
+  
+         content.append(DivContent)
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+     
+      
+        })
+        
+
+      
+        
+    }
+    
+
+    
+
+}
+
+
+
+
+
+
+
+
+//contentDiv.append(divSearch)
+
+
 
 //functions
 arrayhistory=[]

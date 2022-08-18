@@ -1,7 +1,11 @@
 
 
 
+.searcDiv{
+height: 30px;
 
+
+}
 
 
 h1{
@@ -32,7 +36,8 @@ flex-wrap: wrap;
    
 grid-template-areas: 
 "head head head head head head head "
-"sp sp cont cont cont cont cont  "
+
+"sp sp search search search search search  "
 "sp sp cont cont cont cont cont  "
 "sp sp cont cont cont cont cont  "
 "sp sp cont cont cont cont cont  "
@@ -44,8 +49,26 @@ grid-template-areas:
 "foot foot foot foot foot foot foot "
 ;
 }
+.searcDiv{
+    grid-area: search;
+    display:grid;
+    /* justify-items: center;
+    align-items: center; */
+    
+    row-gap: 20px !important;
+      grid-template-areas:   
+"btnSch inpSch inpSch"
 
+}
+.inpSearch{
+    grid-area:inpSch
+}
+.btnSearcg{
+    grid-area:btnSch
+
+}
 .head{
+    /* height: 50px; */
 grid-area: head;
 display:grid;
 justify-items: center;
