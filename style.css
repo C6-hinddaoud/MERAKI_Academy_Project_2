@@ -52,10 +52,10 @@ grid-template-areas:
 .searcDiv{
     grid-area: search;
     display:grid;
-    /* justify-items: center;
-    align-items: center; */
+    /* // justify-items: center; */
+    /* align-items: center;  */
     
-    row-gap: 20px !important;
+    /* row-gap: 20px !important; */
       grid-template-areas:   
 "btnSch inpSch inpSch"
 

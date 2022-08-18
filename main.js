@@ -24,7 +24,7 @@ let arrayBooks=[{category:"Historical Fiction",id:1,description:"description1",T
  
 const divSearch=$ (`<div class="searcDiv"></div>`)
 const inputSearch =$ (`<input class="inpSearch" type="text" name="" id="">`)
-const buttonSearch=$ (`<button class=".btnSearcg">search</button>`)
+const buttonSearch=$ (`<button class=".btnSearch">search</button>`)
 divSearch.append()
 
 divSearch.append(inputSearch)
@@ -50,17 +50,30 @@ divSearch.append(buttonSearch)
  conten.append(divSearch)
  //===============================================================================================
  //searchFunction
- let T=""
-const  searchFun=(m)=>{
-//debugger
-    for(i=0;i<arrayBooks.length;i++){
-     return  arrayBooks.filter((book,index)=>{
 
-        return  m===book.Title
 
  
-        $(".content").empty()
 
+
+
+
+
+
+
+
+
+
+
+
+ 
+ const searchFun=(search)=>{
+//debugger
+$(".content").empty()
+    for(i=0;i<arrayBooks.length;i++){
+    
+   if(search==arrayBooks[i].Title){
+    console.log("hind")
+   // $(".content").empty()
         const content=$(".content")
   
   
@@ -99,30 +112,80 @@ const  searchFun=(m)=>{
          content.append(DivContent)
   
   
+   }
   
   
-  
-  
-
-
-
-
-
-     
-      
-        })
-        
-
-      
-        
     }
-    
 
     
 
 }
 
 
+
+const searchInput=$(".inpSearch").val()
+
+
+ const btnSearcgEvent=$(".btnSearch")
+ btnSearcgEvent.on("click",()=>{
+    console.log("hind")
+   
+    searchFun(searchInput)
+ } )
+
+
+
+
+
+
+
+const funser=()=>{
+
+    for(i=0; i<searchFun().length ;i++)
+    $(".content").empty()
+
+    const content=$(".content")
+
+
+     const DivContent= $(`<div class="DivContent ">
+     </div>`)
+
+     const imgDiv=$(`<img>`)
+     // <div><img class=imgbook></div>
+     imgDiv.attr('src',arrayBooks[i].src)
+     DivContent.append(imgDiv)
+     const DiveTitle=$(`<div></div>`)
+     const title=$(`<h3></h3`)
+     DivContent.append(DiveTitle)
+     DiveTitle.append(title)
+     title.text(arrayBooks[i].Title)
+     const DivePrice=$(`<div></div>`)
+     const price=$(`<h3></h3`)
+     DivContent.append(DivePrice)
+     DivePrice.append(price)
+     price.text(arrayBooks[i].price)
+     
+
+
+
+     const DiveSeeMore=$(`<div> </div>`)
+     const btnSeeMore=$(`<button>see more</button>`)
+     DivContent.append(DiveSeeMore)
+     DiveSeeMore.append(btnSeeMore)
+     
+
+
+
+
+
+
+     content.append(DivContent)
+
+
+
+
+
+}
 
 
 
