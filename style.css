@@ -14,13 +14,19 @@ text-align: center;
 
 
 }
+
+img{
+
+    width: 100px !important;
+    height: 100px !important;
+}
 .contener{
 
  display:grid;
 
 flex-wrap: wrap;
 
-   grid-auto-rows:minmax(50px , auto) ;
+   grid-auto-rows:minmax(50px ,auto) ;
    grid-auto-columns:minmax(150px , auto) ;
    gap: 1px;
    
