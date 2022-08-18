@@ -1,0 +1,134 @@
+
+
+
+
+
+
+h1{
+
+    color: red;
+}
+.main{
+background-color: rgba(157, 127, 255, 0.527);
+text-align: center;
+
+}
+.contener{
+
+ display:grid;
+flex-wrap: wrap;
+   grid-auto-rows:minmax(50px , auto) ;
+   grid-auto-columns:minmax(200px , auto) ;
+   gap: 1px;
+   
+grid-template-areas: 
+"head head head head head head head "
+"sp sp cont cont cont cont cont  "
+"sp sp cont cont cont cont cont  "
+"sp sp cont cont cont cont cont  "
+"sp sp cont cont cont cont cont  "
+"sp sp cont cont cont cont cont  "
+"sp sp cont cont cont cont cont  "
+"sp sp cont cont cont cont cont  "
+"sp sp cont cont cont cont cont  "
+"sp sp cont cont cont cont cont  "
+"foot foot foot foot foot foot foot "
+;
+}
+
+.head{
+grid-area: head;
+display:grid;
+gap: 20px;
+row-gap: 20px !important;
+grid-template-areas: 
+" head1 head1  head2 head3 head4 head5 head5  "
+
+
+}
+.head1{grid-area:head1}
+.head2{grid-area:head2}
+.head3{grid-area:head3}
+.head4{grid-area:head4}
+.head5{grid-area:head5}
+
+
+.sp{
+grid-area: sp;
+display:grid;
+gap: 20px;
+row-gap: 20px !important;
+grid-template-areas: 
+"A"
+"B"
+"C"
+"D";
+}
+.spA{
+    grid-area: A;
+}
+.spB{
+    grid-area: B; 
+}
+.spC{
+    grid-area: C;
+}
+.spD{
+    grid-area: D;
+}
+
+.content{
+flex-wrap: wrap;
+grid-area: cont;
+display:grid;
+gap: 20px;
+/* //row-gap: 20px !important; */
+gap: 10PX;
+grid-template-areas: 
+"BOOK1 BOOK2"
+"BOOK3 BOOK4";
+
+}
+
+.conBook1{grid-area: BOOK1}
+.conBook2{grid-area: BOOK2}
+.conBook3{grid-area: BOOK3}
+.conBook4{grid-area: BOOK4}
+
+
+
+
+.footer{
+    grid-area:foot
+
+}
+
+
+
+.mainsDiv{
+        
+}
+.username{
+
+}
+.contactUS{
+
+
+}
+.home{
+
+
+}
+
+.contnav{
+
+
+
+}
+
+
+
+
+.nave{
+
+}
