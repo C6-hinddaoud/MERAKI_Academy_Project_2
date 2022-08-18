@@ -12,13 +12,16 @@ h1{
 background-color: rgba(157, 127, 255, 0.527);
 text-align: center;
 
+
 }
 .contener{
 
  display:grid;
+
 flex-wrap: wrap;
+
    grid-auto-rows:minmax(50px , auto) ;
-   grid-auto-columns:minmax(200px , auto) ;
+   grid-auto-columns:minmax(150px , auto) ;
    gap: 1px;
    
 grid-template-areas: 
@@ -39,6 +42,8 @@ grid-template-areas:
 .head{
 grid-area: head;
 display:grid;
+justify-items: center;
+align-items: center;
 gap: 20px;
 row-gap: 20px !important;
 grid-template-areas: 
@@ -58,7 +63,11 @@ grid-area: sp;
 display:grid;
 gap: 20px;
 row-gap: 20px !important;
+justify-items: center;
+align-items: center;
+background-color: bisque;
 grid-template-areas: 
+
 "A"
 "B"
 "C"
@@ -81,6 +90,8 @@ grid-template-areas:
 flex-wrap: wrap;
 grid-area: cont;
 display:grid;
+justify-items: center;
+align-items: center;
 gap: 20px;
 /* //row-gap: 20px !important; */
 gap: 10PX;
