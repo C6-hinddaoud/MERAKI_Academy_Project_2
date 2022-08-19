@@ -262,6 +262,7 @@ for(i=0;i<arrayBooks.length;i++){
           dispDiv.append(DiveTitle)
           dispDiv.append(title)
           title.text(arrayBooks[i].Title)
+          let bookTitle=arrayBooks[i].Title
 
           const DiveDescrption=$(`<div></div>`)
           const Description=$(`<p></p>`)
@@ -277,7 +278,8 @@ for(i=0;i<arrayBooks.length;i++){
           dispDiv.append(DivePrice)
           DivePrice.append(price)
           price.text(arrayBooks[i].price+ " JD")
-
+let bookPrice=arrayBooks[i].price
+console.log(bookPrice)
           const countDiv=$(`<div></div>`)
           
         //   const btmMin=$(`<button>-</button>`)
@@ -301,7 +303,7 @@ for(i=0;i<arrayBooks.length;i++){
             console.log("GGGGGG")
           console.log(inpId)
           console.log("GGGGGG")
-          add(inpId)
+          add(inpId,bookPrice,bookTitle)
              })
           dispDiv.append(addDiv)
 ///////
@@ -322,7 +324,7 @@ for(i=0;i<arrayBooks.length;i++){
 
 
 let sum=0
-const add=function(iptId){
+const add=function(iptId,bookPrice,bookTitle){
    // debugger
   // const INP=inpId
   
@@ -335,7 +337,20 @@ console.log("ADDDDDDDDDDDDD")
 let itemNumber = parseInt($(`#${iptId}`).val())
 sum=parseInt(sum)+parseInt(itemNumber)
    $(".spanShooping").text(sum)
+   $(`#${iptId}`).val("")
+let priceBook=itemNumber*bookPrice
+console.log(priceBook)
+
+if(localStorage.hasOwnProperty(bookTitle)){
     
+    let  counSum=parseInt( localStorage.getItem(bookTitle))
+    console.log(counSum)
+   localStorage.setItem(bookTitle,priceBook+counSum)
+}else{
+
+    localStorage.setItem(bookTitle,priceBook)
+
+}
 }
 
 
