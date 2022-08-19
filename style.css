@@ -19,11 +19,27 @@ text-align: center;
 
 }
 
-img{
+/* img{
 
     width: 100px !important;
     height: 100px !important;
+} */
+
+
+
+
+
+.gridImg{
+    width: 150px !important;
+    height: 170px !important;
+
+
 }
+
+
+
+
+
 .contener{
 
  display:grid;
@@ -52,6 +68,15 @@ grid-template-areas:
 .searcDiv{
     grid-area: search;
     display:grid;
+
+
+    height: 36px;
+    border: 14px #d3c4d9 solid;
+    gap: 67px;
+    background: #d3c4d9;
+    border-radius: 18px;
+
+
     /* // justify-items: center; */
     /* align-items: center;  */
     
@@ -59,9 +84,13 @@ grid-template-areas:
       grid-template-areas:   
 "btnSch inpSch inpSch"
 
+
+
+
 }
 .inpSearch{
-    grid-area:inpSch
+    grid-area:inpSch;
+    text-align: center;
 }
 .btnSearcg{
     grid-area:btnSch
@@ -114,6 +143,34 @@ grid-template-areas:
 .spD{
     grid-area: D;
 }
+
+.display{
+    /* width: 300px !important;
+    height: 300px !important; */
+background-color: rgb(241, 212, 212);
+    flex-wrap: wrap;
+    grid-area: cont;
+    display:grid;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+    /* //row-gap: 20px !important; */
+    gap: 10PX;
+    grid-template-areas: 
+    "BOOK1 "
+    ;
+    
+
+
+
+}
+
+
+
+
+
+
+
 
 .content{
 flex-wrap: wrap;

@@ -66,10 +66,12 @@ let arrayBooks=[{category:"Historical Fiction",id:1,description:"description1",T
  
  const searchFun=(search)=>{
 //debugger
+
+$(".content").show()
 $(".content").empty()
     for(i=0;i<arrayBooks.length;i++){
     
-   if(search==arrayBooks[i].Title){
+   if(search.toUpperCase()==arrayBooks[i].Title.toUpperCase()){
     console.log("hind")
    // $(".content").empty()
         const content=$(".content")
@@ -78,9 +80,12 @@ $(".content").empty()
          const DivContent= $(`<div class="DivContent ">
          </div>`)
   
-         const imgDiv=$(`<img>`)
+         const imgDiv=$(`<img >`)
+         imgDiv.addClass("gridImg")
+         
          // <div><img class=imgbook></div>
          imgDiv.attr('src',arrayBooks[i].src)
+         //imgDiv.attr('class',"gridImg")
          DivContent.append(imgDiv)
          const DiveTitle=$(`<div></div>`)
          const title=$(`<h3></h3`)
@@ -131,15 +136,21 @@ $(".content").empty()
 arrayhistory=[]
 arrayAdven=[]
 const mainFun=(categ)=>{
+    console.log("hind")
     //debugger
+    $(".display").hide();
+    $(".content").show()
+  //  $(".main").show()
     $(".content").empty()
+   
     for(i=0;i<arrayBooks.length;i++){
     if(arrayBooks[i].category==categ){
-        content=$(".content")
+       const content=$(".content")
         const DivContent= $(`<div class="DivContent ">
         </div>`)
 
         const imgDiv=$(`<img>`)
+        imgDiv.addClass("gridImg")
         // <div><img class=imgbook></div>
         imgDiv.attr('src',arrayBooks[i].src)
         DivContent.append(imgDiv)
@@ -157,16 +168,31 @@ const mainFun=(categ)=>{
 
 
 
-        const DiveSeeMore=$(`<div> </div>`)
-        const btnSeeMore=$(`<button>see more</button>`)
+        const DiveSeeMore=$(`<div > </div>`)
+        const btnSeeMore=$(`<button class="seeMoreclass" >see more</button>`)
+
+
+        btnSeeMore.attr('id', arrayBooks[i].id);
+       // btnSeeMore.addClass="seeMoreclass"
         DivContent.append(DiveSeeMore)
         DiveSeeMore.append(btnSeeMore)
         
 
+        //const btnSeeMore=$(".seeMoreclass")
+        btnSeeMore.on("click",function(e){
+            console.log(e)
+           // console.log(e.target.id)
+            objectId=e.target.id
+            //console.log(this)
+            //console.log($(this))
+          //  console.log($(this).parent())
+
+            //console.log($(this).parent().children())
+           displyFun(objectId)
+        })
 
 
-
-
+       
 
         content.append(DivContent)
        
@@ -178,6 +204,32 @@ const mainFun=(categ)=>{
 }
 
 
+
+
+
+const displyFun= function (objId){
+    console.log(objId)
+    //$(".content").empty()
+   // $(".content").show()
+   $(".content").hide();
+
+   const dispDiv= $(`<div class="display 
+   
+   main">footer hh </div>`)
+
+
+  conten.append(dispDiv)
+  dispDiv.show();
+
+        console.log("hind")
+       console.log($(this).parents())
+       console.log(this)
+       // console.log(e)
+        
+    
+        
+        
+}
 
 
 //  const adv= AdventureFun=()=>{
@@ -317,8 +369,7 @@ const cat3= $(`<div class="spC"><h3>Classics</h3> </div>`)
     mainFun("Literary Fiction")
  } )
 
-
-
+ 
 
 
  const can1= $(`<div class="conBook1"> AB</div>`)
