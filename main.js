@@ -66,7 +66,8 @@ let arrayBooks=[{category:"Historical Fiction",id:1,description:"description1",T
  
  const searchFun=(search)=>{
 //debugger
-
+$(".display").hide();
+   
 $(".content").show()
 $(".content").empty()
     for(i=0;i<arrayBooks.length;i++){
@@ -103,12 +104,28 @@ $(".content").empty()
   
          const DiveSeeMore=$(`<div> </div>`)
          const btnSeeMore=$(`<button>see more</button>`)
+
+         btnSeeMore.attr('id', arrayBooks[i].id);
          DivContent.append(DiveSeeMore)
          DiveSeeMore.append(btnSeeMore)
          
   
   
-  
+         btnSeeMore.on("click",function(e){
+            console.log(e)
+            console.log("r")
+            console.log(e.target.id)
+            objectId=e.target.id
+            //console.log(this)
+            //console.log($(this))
+          //  console.log($(this).parent())
+
+            //console.log($(this).parent().children())
+           displyFun(objectId)
+        })
+
+
+       
   
   
   
@@ -181,7 +198,7 @@ const mainFun=(categ)=>{
         //const btnSeeMore=$(".seeMoreclass")
         btnSeeMore.on("click",function(e){
             console.log(e)
-           // console.log(e.target.id)
+            console.log(e.target.id)
             objectId=e.target.id
             //console.log(this)
             //console.log($(this))
