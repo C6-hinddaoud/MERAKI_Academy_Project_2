@@ -288,6 +288,7 @@ console.log(bookPrice)
           inpCoun.attr('id',"inpAdd" +arrayBooks[i].id);
      const inpId="inpAdd"+arrayBooks[i].id
      console.log(inpId)
+     
         //   const btnplus=$(`<button>+</button>`)
         //   countDiv.append(btmMin)
           countDiv.append(inpCoun)
@@ -298,7 +299,7 @@ console.log(bookPrice)
           const addDiv=$(`<div></div>`)
           const btnadd=$(`<button class="btnAddClass">Add</button>`)
           addDiv.append(btnadd)
-
+          $(`#${inpId}`).val(1)
          btnadd.on("click",function(){
             console.log("GGGGGG")
           console.log(inpId)
