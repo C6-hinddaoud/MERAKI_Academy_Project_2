@@ -31,7 +31,7 @@ let arrayBooks=[{category:"Historical Fiction",id:1,description:"description1",T
  
  
  const conten=  $(".contener")
- const headDiv= $(`<div class="head main ">head </div>`)
+ const headDiv= $(`<div class="head main "></div>`)
  const spDiv= $(`<div class="sp main"> </div>`)
  const contentDiv= $(`<div class="content main "> </div>`)
  const footerDiv= $(`<div class="footer main">footer </div>`)
@@ -282,7 +282,8 @@ for(i=0;i<arrayBooks.length;i++){
           
           const btmMin=$(`<button>-</button>`)
 
-          const inpCoun=$(`<input type="text" name="" id="">`)
+          const inpCoun=$(`<input type="number" min="1" name="" id="">`)
+          inpCoun.attr('id',"inpAdd" +arrayBooks[i].id);
 
           const btnplus=$(`<button>+</button>`)
           countDiv.append(btmMin)
@@ -290,6 +291,13 @@ for(i=0;i<arrayBooks.length;i++){
           
           countDiv.append(btnplus)
           dispDiv.append(countDiv)
+
+          const addDiv=$(`<div></div>`)
+          const btnadd=$(`<button>Add</button>`)
+          addDiv.append(btnadd)
+
+
+          dispDiv.append(addDiv)
 ///////
 
 
@@ -458,7 +466,10 @@ const cat3= $(`<div class="spC"><h3>Classics</h3> </div>`)
  const head2= $(`<div class="head2"> BB</div>`)
  const head3= $(`<div class="head3"> CB</div>`)
  const head4= $(`<div class="head4"> DB</div>`)
- const head5= $(`<div class="head4"> DB</div>`)
+ const head5= $(`<div class="head5"> 
+ <i class="fa fa-shopping-basket" style="font-size:24px;color:red"></i>
+ <SPan class="spanShooping"> purchases: </SPan>
+ </div>`)
  headDiv.append( head1)
  headDiv.append( head2)
  headDiv.append( head3)
