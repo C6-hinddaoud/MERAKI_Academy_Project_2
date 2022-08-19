@@ -1,21 +1,21 @@
-let arrayBooks=[{category:"Historical Fiction",id:1,description:"description1",Title:"title1",price:5 +" jd",src:"./images/book3.png"}
-,{category:"Historical Fiction",id:2,description:"description1",Title:"title1",price:5 +" jd",src:"./images/book4.png"}
+let arrayBooks=[{category:"Historical Fiction",id:1,description:"description1",Title:"title1",price:5 ,src:"./images/book3.png"}
+,{category:"Historical Fiction",id:2,description:"description1",Title:"title1",price:5 ,src:"./images/book4.png"}
 
 
 
 
-,{category:"Adventure",id:3,description:"description2",Title:"title2",price:15 +" jd",src: "./images/book1.png"}
+,{category:"Adventure",id:3,description:"description2",Title:"title2",price:15 ,src: "./images/book1.png"}
 
-,{category:"Adventure",id:4,description:"description2",Title:"title2",price:15 +" jd",src:"./images/book2.png"}
+,{category:"Adventure",id:4,description:"description2",Title:"title2",price:15 ,src:"./images/book2.png"}
 
-,{category:"Classics",id:5,description:"description3",Title:"title3",price:25 +" jd",src:"./images/book5.png"}
+,{category:"Classics",id:5,description:"description3",Title:"title3",price:25 ,src:"./images/book5.png"}
 
 
-,{category:"Classics",id:6,description:"description3",Title:"title3",price:25 +" jd",src:"./images/book7.png"}
+,{category:"Classics",id:6,description:"description3",Title:"title3",price:25 ,src:"./images/book7.png"}
 
-,{category:"Literary Fiction",id:7,description:"description4",Title:"title4",price:35 +" jd",src:"./images/book8.png"}
+,{category:"Literary Fiction",id:7,description:"description4",Title:"title4",price:35 ,src:"./images/book8.png"}
 
-,{category:"Literary Fiction",id:8,description:"description4",Title:"titnew",price:35 +" jd",src:"./images/book4.png"}
+,{category:"Literary Fiction",id:8,description:"description4",Title:"titnew",price:35 ,src:"./images/book4.png"}
 ]
 
 
@@ -97,7 +97,7 @@ $(".content").empty()
          const price=$(`<h3></h3>`)
          DivContent.append(DivePrice)
          DivePrice.append(price)
-         price.text(arrayBooks[i].price)
+         price.text(arrayBooks[i].price+ "JD")
          
   
   
@@ -180,7 +180,7 @@ const mainFun=(categ)=>{
         const price=$(`<h3></h3>`)
         DivContent.append(DivePrice)
         DivePrice.append(price)
-        price.text(arrayBooks[i].price)
+        price.text(arrayBooks[i].price +" JD")
         
 
 
@@ -276,27 +276,33 @@ for(i=0;i<arrayBooks.length;i++){
           const price=$(`<h3></h3`)
           dispDiv.append(DivePrice)
           DivePrice.append(price)
-          price.text(arrayBooks[i].price)
+          price.text(arrayBooks[i].price+ " JD")
 
           const countDiv=$(`<div></div>`)
           
-          const btmMin=$(`<button>-</button>`)
+        //   const btmMin=$(`<button>-</button>`)
 
-          const inpCoun=$(`<input type="number" min="1" name="" id="">`)
+          const inpCoun=$(`<input type="number" min="1"   name="" id="">`)
           inpCoun.attr('id',"inpAdd" +arrayBooks[i].id);
-
-          const btnplus=$(`<button>+</button>`)
-          countDiv.append(btmMin)
+     const inpId="inpAdd"+arrayBooks[i].id
+     console.log(inpId)
+        //   const btnplus=$(`<button>+</button>`)
+        //   countDiv.append(btmMin)
           countDiv.append(inpCoun)
           
-          countDiv.append(btnplus)
+        //   countDiv.append(btnplus)
           dispDiv.append(countDiv)
 
           const addDiv=$(`<div></div>`)
-          const btnadd=$(`<button>Add</button>`)
+          const btnadd=$(`<button class="btnAddClass">Add</button>`)
           addDiv.append(btnadd)
 
-
+         btnadd.on("click",function(){
+            console.log("GGGGGG")
+          console.log(inpId)
+          console.log("GGGGGG")
+          add(inpId)
+             })
           dispDiv.append(addDiv)
 ///////
 
@@ -310,6 +316,35 @@ for(i=0;i<arrayBooks.length;i++){
         
         
 }
+
+
+
+
+
+let sum=0
+const add=function(iptId){
+   // debugger
+  // const INP=inpId
+  
+  console.log( iptId)
+  
+
+    console.log($("#INP").val())
+    console.log($(`#${iptId}`).val())
+console.log("ADDDDDDDDDDDDD")
+let itemNumber = parseInt($(`#${iptId}`).val())
+sum=parseInt(sum)+parseInt(itemNumber)
+   $(".spanShooping").text(sum)
+    
+}
+
+
+
+
+
+
+
+
 
 
 //  const adv= AdventureFun=()=>{
@@ -452,6 +487,17 @@ const cat3= $(`<div class="spC"><h3>Classics</h3> </div>`)
  
 
 
+
+
+
+
+
+
+
+
+
+
+
  const can1= $(`<div class="conBook1"> AB</div>`)
  const can2= $(`<div class="conBook2"> BB</div>`)
  const can3= $(`<div class="conBook3"> CB</div>`)
@@ -467,8 +513,8 @@ const cat3= $(`<div class="spC"><h3>Classics</h3> </div>`)
  const head3= $(`<div class="head3"> CB</div>`)
  const head4= $(`<div class="head4"> DB</div>`)
  const head5= $(`<div class="head5"> 
- <i class="fa fa-shopping-basket" style="font-size:24px;color:red"></i>
- <SPan class="spanShooping"> purchases: </SPan>
+ <i class="fa fa-shopping-basket" style="font-size:24px;color:blueviolet"></i>
+ <SPan class="spanShooping"> </SPan>
  </div>`)
  headDiv.append( head1)
  headDiv.append( head2)
