@@ -88,12 +88,12 @@ $(".content").empty()
          //imgDiv.attr('class',"gridImg")
          DivContent.append(imgDiv)
          const DiveTitle=$(`<div></div>`)
-         const title=$(`<h3></h3`)
+         const title=$(`<h3></h3>`)
          DivContent.append(DiveTitle)
          DiveTitle.append(title)
          title.text(arrayBooks[i].Title)
          const DivePrice=$(`<div></div>`)
-         const price=$(`<h3></h3`)
+         const price=$(`<h3></h3>`)
          DivContent.append(DivePrice)
          DivePrice.append(price)
          price.text(arrayBooks[i].price)
@@ -155,12 +155,12 @@ const mainFun=(categ)=>{
         imgDiv.attr('src',arrayBooks[i].src)
         DivContent.append(imgDiv)
         const DiveTitle=$(`<div></div>`)
-        const title=$(`<h3></h3`)
+        const title=$(`<h3></h3>`)
         DivContent.append(DiveTitle)
         DiveTitle.append(title)
         title.text(arrayBooks[i].Title)
         const DivePrice=$(`<div></div>`)
-        const price=$(`<h3></h3`)
+        const price=$(`<h3></h3>`)
         DivContent.append(DivePrice)
         DivePrice.append(price)
         price.text(arrayBooks[i].price)
@@ -215,16 +215,71 @@ const displyFun= function (objId){
 
    const dispDiv= $(`<div class="display 
    
-   main">footer hh </div>`)
+   main"> </div>`)
+
+   dispDiv.show();
+
+
+////
+
+
+for(i=0;i<arrayBooks.length;i++){
+    
+    if(objId==arrayBooks[i].id){
+     console.log("hind")
+   
+         const content=$(".content")
+   
+   
+          
+   
+          const imgDiv=$(`<img >`)
+          imgDiv.addClass("gridImg")
+          
+          // <div><img class=imgbook></div>
+          imgDiv.attr('src',arrayBooks[i].src)
+          //imgDiv.attr('class',"gridImg")
+          dispDiv.append(imgDiv)
+          const DiveTitle=$(`<div></div>`)
+          const title=$(`<h3></h3`)
+          dispDiv.append(DiveTitle)
+          dispDiv.append(title)
+          title.text(arrayBooks[i].Title)
+
+          const DiveDescrption=$(`<div></div>`)
+          const Description=$(`<p></p>`)
+          dispDiv.append(DiveDescrption)
+          DiveDescrption.append(Description)
+          Description.text(arrayBooks[i].description)
+          
+
+
+
+          const DivePrice=$(`<div></div>`)
+          const price=$(`<h3></h3`)
+          dispDiv.append(DivePrice)
+          DivePrice.append(price)
+          price.text(arrayBooks[i].price)
+
+          const countDiv=$(`<div></div>`)
+          
+          const btmMin=$(`<button>-</button>`)
+
+          const inpCoun=$(`<input type="text" name="" id="">`)
+
+          const btnplus=$(`<button>+</button>`)
+          countDiv.append(btmMin)
+          countDiv.append(inpCoun)
+          
+          countDiv.append(btnplus)
+          dispDiv.append(countDiv)
+///////
 
 
   conten.append(dispDiv)
-  dispDiv.show();
+ 
 
-        console.log("hind")
-       console.log($(this).parents())
-       console.log(this)
-       // console.log(e)
+    }}
         
     
         
