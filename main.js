@@ -1,19 +1,19 @@
 let arrayBooks=[{category:"Historical Fiction",id:1,description:"description1",Title:"title1",price:5 ,src:"./images/book3.png"}
-,{category:"Historical Fiction",id:2,description:"description1",Title:"title5",price:5 ,src:"./images/book4.png"}
+,{category:"Historical Fiction",id:2,description:"description1",Title:"title2",price:5 ,src:"./images/book4.png"}
 
 
 
 
-,{category:"Adventure",id:3,description:"description2",Title:"title2",price:15 ,src: "./images/book1.png"}
+,{category:"Adventure",id:3,description:"description2",Title:"title3",price:15 ,src: "./images/book1.png"}
 
-,{category:"Adventure",id:4,description:"description2",Title:"title7",price:15 ,src:"./images/book2.png"}
+,{category:"Adventure",id:4,description:"description2",Title:"title4",price:15 ,src:"./images/book2.png"}
 
-,{category:"Classics",id:5,description:"description3",Title:"title8",price:25 ,src:"./images/book5.png"}
+,{category:"Classics",id:5,description:"description3",Title:"title5",price:25 ,src:"./images/book5.png"}
 
 
 ,{category:"Classics",id:6,description:"description3",Title:"title6",price:25 ,src:"./images/book7.png"}
 
-,{category:"Literary Fiction",id:7,description:"description4",Title:"title4",price:35 ,src:"./images/book8.png"}
+,{category:"Literary Fiction",id:7,description:"description4",Title:"title7",price:35 ,src:"./images/book8.png"}
 
 ,{category:"Literary Fiction",id:8,description:"description4",Title:"titnew",price:35 ,src:"./images/book4.png"}
 ]
@@ -301,7 +301,7 @@ console.log(bookPrice)
           const addDiv=$(`<div></div>`)
           const btnadd=$(`<button class="btnAddClass">Add</button>`)
           addDiv.append(btnadd)
-          $(`#${inpId}`).val(1)
+         // $(`#${inpId}`).val(1)
          btnadd.on("click",function(){
             console.log("GGGGGG")
           console.log(inpId)
@@ -328,7 +328,7 @@ console.log(bookPrice)
 
 let sum=0
 const add=function(iptId,bookPrice,bookTitle){
-   // debugger
+  //  debugger
   // const INP=inpId
   
   console.log( iptId)
@@ -337,25 +337,26 @@ const add=function(iptId,bookPrice,bookTitle){
     console.log($("#INP").val())
     console.log($(`#${iptId}`).val())
 console.log("ADDDDDDDDDDDDD")
+
 let itemNumber = parseInt($(`#${iptId}`).val())
 sum=parseInt(sum)+parseInt(itemNumber)
    $(".spanShoopingClass").text(sum)
-   $(`#${iptId}`).val("")
-let priceBook=itemNumber*bookPrice
-console.log(priceBook)
-let b=0
+  // $(`#${iptId}`).val("")
+//let priceBook=itemNumber*bookPrice
+//console.log(priceBook)
+let priceBook
 
 console.log("test")
-console.log(localStorage.setItem(bookTitle,priceBook))
+//console.log(localStorage.setItem(bookTitle,priceBook))
 console.log("test")
 if(localStorage.hasOwnProperty(bookTitle)){
     
     let  counSum=parseInt( localStorage.getItem(bookTitle))
     console.log(counSum)
-    
-   localStorage.setItem(bookTitle,priceBook+counSum,5)
+     priceBook=itemNumber*bookPrice
+   localStorage.setItem(bookTitle,priceBook+counSum)
 }else{
-
+   let priceBook=itemNumber*bookPrice
     localStorage.setItem(bookTitle,priceBook)
 
 }
@@ -384,30 +385,8 @@ if(localStorage.hasOwnProperty(bookTitle)){
 // }
 
 
-const ClassicsFun=()=>{
-    //debugger
-
-return arrayBooks.filter((book,index)=>{
- return book.category==="Classics"
- 
 
 
-}
-)
-}
-
-
-const LiteraryFun=()=>{
-    //debugger
-
-return arrayBooks.filter((book,index)=>{
- return book.category==="Literary Fiction"
- 
-
-
-}
-)
-}
 
 
 
@@ -545,13 +524,19 @@ const cat3= $(`<div class="spC"><h3>Classics</h3> </div>`)
  headDiv.append( head4)
  headDiv.append( head5)
 
- shoopingItem=Object.entries(localStorage)
-$(".fa-shopping-basket").on("click",function(){
 
 
+
+
+ console.log("localStorage")
 console.log(localStorage)
-console.log(localStorage["title2"])
-console.log("span")
+
+$(".fa-shopping-basket").on("click",function(){
+   shoopingItem=Object.entries(localStorage)
+  
+//console.log(localStorage)
+//console.log(localStorage["title2"])
+//console.log("span")
 shoopingFun();
 
 })
@@ -566,7 +551,7 @@ const shoopingFun=function(){
 
   
  
-conten.append(ShopingDiv)
+    conten.append(ShopingDiv)
 
 
    for(i=0;i<shoopingItem.length;i++){
@@ -578,11 +563,7 @@ conten.append(ShopingDiv)
       ShopingItemDiv.append(btmMin)
       ShopingItemDiv.append([shoopingItem[i][0]]+":    ")
 
-// for(i=0;i<arrayBooks.length;i++){
-//    if([shoopingItem[i][0]]==arrayBooks.Title){
-//       console.log(arrayBooks[i].price)
-//    }
-// }
+
 
       ShopingItemDiv.append( [shoopingItem[i][1]] )
       ShopingItemDiv.append(btnplus)
