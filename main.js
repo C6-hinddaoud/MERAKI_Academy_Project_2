@@ -579,15 +579,18 @@ const shoopingFun=function(){
       ShopingItemDiv.append([shoopingItem[i][0]]+":    ")
 
 
+        m=JSON.parse([shoopingItem[i][1]])
 
-      ShopingItemDiv.append( [shoopingItem[i][1]] )
+      ShopingItemDiv.append( m[0].num)
+      ShopingItemDiv.append( m[0].price)
       ShopingItemDiv.append(btnplus)
       ShopingItemDiv.append( `  <i class="fa fa-remove" style="font-size:24px;color:red"></i>`)
 
 
-      btmMin.on("click",function(){
+      btmMin.on("click",function(e){
          console.log("btmMin")
-         
+         console.log(e)
+         console.log(this)
          })
          btnplus.on("click",function(){
             console.log("btmplusn")
