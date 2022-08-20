@@ -328,7 +328,7 @@ console.log(bookPrice)
 
 let sum=0
 const add=function(iptId,bookPrice,bookTitle){
-  //  debugger
+
   // const INP=inpId
   
   console.log( iptId)
@@ -336,28 +336,43 @@ const add=function(iptId,bookPrice,bookTitle){
 
     console.log($("#INP").val())
     console.log($(`#${iptId}`).val())
-console.log("ADDDDDDDDDDDDD")
+
 
 let itemNumber = parseInt($(`#${iptId}`).val())
 sum=parseInt(sum)+parseInt(itemNumber)
    $(".spanShoopingClass").text(sum)
-  // $(`#${iptId}`).val("")
-//let priceBook=itemNumber*bookPrice
-//console.log(priceBook)
+  
 let priceBook
 
 console.log("test")
 //console.log(localStorage.setItem(bookTitle,priceBook))
+
 console.log("test")
 if(localStorage.hasOwnProperty(bookTitle)){
-    
-    let  counSum=parseInt( localStorage.getItem(bookTitle))
-    console.log(counSum)
-     priceBook=itemNumber*bookPrice
-   localStorage.setItem(bookTitle,priceBook+counSum)
+
+  // debugger
+   // let  counSum=parseInt( localStorage.getItem(bookTitle))
+   // console.log(counSum)
+   //  priceBook=itemNumber*bookPrice 
+   let  couning=JSON.parse(localStorage.getItem(bookTitle))
+  localStorage.setItem(bookTitle, JSON.stringify(couning));
+   //counNum=couning[num]
+ couning=couning[0]
+ let oldNum= couning.num
+  let newNum=oldNum+itemNumber
+//console.log(counNum+itemNumber)
+//num=counNum+itemNumber
+//let mybookarray;
+ //couning.push({price:bookPrice,num:newNum})
+ let mybookarray=[{price:bookPrice,num:newNum}]
+localStorage.setItem(bookTitle,JSON.stringify(mybookarray))
+   // localStorage.setItem(bookTitle,[{price:bookPrice,num:newNum}])
 }else{
-   let priceBook=itemNumber*bookPrice
-    localStorage.setItem(bookTitle,priceBook)
+  // let priceBook=itemNumber*bookPrice
+    let mybookarray=[{price:bookPrice,num:itemNumber}]
+    
+    localStorage.setItem(bookTitle,JSON.stringify( mybookarray))
+
 
 }
 }
@@ -408,7 +423,7 @@ conten.append(divSearch)
 
   let btnSearcgEvent=$(".btnSearch")
   buttonSearch.on("click",function( ){
-    console.log("hind")
+    
    
     searchFun($(".inpSearch").val())
  } )
@@ -459,7 +474,7 @@ const cat3= $(`<div class="spC"><h3>Classics</h3> </div>`)
  spDiv.append(cat4)
  const HistoricalEvent=$(".spA")
  HistoricalEvent.on("click",()=>{
-    console.log("hind")
+
    
     mainFun("Historical Fiction")
  } )
