@@ -282,13 +282,13 @@ let bookPrice=arrayBooks[i].price
 console.log(bookPrice)
           const countDiv=$(`<div></div>`)
           
-        //   const btmMin=$(`<button>-</button>`)
+       
 
           const inpCoun=$(`<input type="number" min="1"   name="" id="">`)
           inpCoun.attr('id',"inpAdd" +arrayBooks[i].id);
      const inpId="inpAdd"+arrayBooks[i].id
      console.log(inpId)
-     
+      //   const btmMin=$(`<button>-</button>`)
         //   const btnplus=$(`<button>+</button>`)
         //   countDiv.append(btmMin)
           countDiv.append(inpCoun)
@@ -341,12 +341,17 @@ sum=parseInt(sum)+parseInt(itemNumber)
    $(`#${iptId}`).val("")
 let priceBook=itemNumber*bookPrice
 console.log(priceBook)
+let b=0
 
+console.log("test")
+console.log(localStorage.setItem(bookTitle,priceBook))
+console.log("test")
 if(localStorage.hasOwnProperty(bookTitle)){
     
     let  counSum=parseInt( localStorage.getItem(bookTitle))
     console.log(counSum)
-   localStorage.setItem(bookTitle,priceBook+counSum)
+    
+   localStorage.setItem(bookTitle,priceBook+counSum,5)
 }else{
 
     localStorage.setItem(bookTitle,priceBook)
@@ -538,4 +543,45 @@ const cat3= $(`<div class="spC"><h3>Classics</h3> </div>`)
  headDiv.append( head4)
  headDiv.append( head5)
 
+ shoopingItem=Object.entries(localStorage)
+$(".fa-shopping-basket").on("click",function(){
 
+
+console.log(localStorage)
+console.log(localStorage["title2"])
+console.log("span")
+shoopingFun();
+
+})
+const shoopingFun=function(){
+   $(".display").hide()
+   ///
+
+   $(".content").hide();
+
+   const ShopingDiv= $(`<div class="spanShooping
+   main">   </div>`)
+
+   localStorage.removeItem("title11")
+ 
+conten.append(ShopingDiv)
+
+
+   for(i=0;i<shoopingItem.length;i++){
+      const ShopingItemDiv= $(`<div class="ShopingItemDivclass"></div>`)
+      const btmMin=$(`<button class="show">-</button>`)
+      const btnplus=$(`<button class="show">+</button>`)
+      ShopingDiv.append(ShopingItemDiv)
+      
+      ShopingItemDiv.append(btmMin)
+      ShopingItemDiv.append([shoopingItem[i][0]]+":    ")
+      ShopingItemDiv.append( [shoopingItem[i][1]] )
+      ShopingItemDiv.append(btnplus)
+      ShopingItemDiv.append( `  <i class="fa fa-remove" style="font-size:24px;color:red"></i>`)
+   }
+   const checkOutDiv= $(`<div class=""></div>`)
+   const btnOutcheck=$(`<button>CheckOut</button>`)
+
+
+
+}
