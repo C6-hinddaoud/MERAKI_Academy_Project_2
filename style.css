@@ -226,7 +226,9 @@ grid-template-areas:
 "BOOK3 BOOK4";
 
 }
-
+.spanShoopingClass{
+    color: mediumorchid;
+}
 .conBook1{grid-area: BOOK1}
 .conBook2{grid-area: BOOK2}
 .conBook3{grid-area: BOOK3}
