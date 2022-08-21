@@ -525,10 +525,10 @@ const cat3= $(`<div class="spC"><h3>Classics</h3> </div>`)
 //  contentDiv.append(can4)
 
 
- const head1= $(`<div class="head1"> AB</div>`)
- const head2= $(`<div class="head2"> BB</div>`)
- const head3= $(`<div class="head3"> CB</div>`)
- const head4= $(`<div class="head4"> DB</div>`)
+ const head1= $(`<div class="head1"> Home</div>`)
+ const head2= $(`<div class="head2"> AboutUs</div>`)
+ const head3= $(`<div class="head3"> ContactUs</div>`)
+ const head4= $(`<div class="head4"> UserNamr</div>`)
  const head5= $(`<div class="head5"> 
  <i class="fa fa-shopping-basket" style="font-size:24px;color:blueviolet"></i>
  <SPan class="spanShoopingClass"> </SPan>
@@ -577,7 +577,7 @@ const shoopingFun=function(){
 
 
 
-const mytable=$(".mytable")
+//const mytable=$(".mytable")
 
  //const diveTable=$(".divTable")
 // rowtable
@@ -645,7 +645,12 @@ const mytable=$(".mytable")
          })
          btnplus.on("click",function(){
             let neewtatal=total+m[0].price
-            
+            let  couning=JSON.parse(localStorage.getItem(bookTitle))
+             localStorage.setItem(bookTitle, JSON.stringify(couning));
+   
+             couning=couning[0]
+            let oldNum= couning.num
+            let newNum=oldNum+itemNumber
             totalDiv.append(neewtatal)
             })
             $(".fa-remove").on("click",function(){
