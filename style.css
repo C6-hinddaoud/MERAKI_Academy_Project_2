@@ -209,9 +209,17 @@ background-color: pink;
     /* //row-gap: 20px !important; */
     
 }
+.ShopingItemDivclass{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-items: center;
+    align-items: center;
+    gap: 50px;
+}
 
-
-
+th,tr{
+    width:100px ;
+}
 .content{
 flex-wrap: wrap;
 grid-area: cont;

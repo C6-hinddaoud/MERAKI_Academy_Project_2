@@ -555,6 +555,10 @@ $(".fa-shopping-basket").on("click",function(){
 shoopingFun();
 
 })
+
+
+
+
 const shoopingFun=function(){
    $(".display").hide()
    ///
@@ -565,44 +569,93 @@ const shoopingFun=function(){
    main">   </div>`)
 
   
- 
+
+
+
+  
     conten.append(ShopingDiv)
 
 
+
+const mytable=$(".mytable")
+
+ //const diveTable=$(".divTable")
+// rowtable
+ 
+ //ShopingDiv.append(diveTable)
+ //divTable.append(mytable)
+
+ 
    for(i=0;i<shoopingItem.length;i++){
       const ShopingItemDiv= $(`<div class="ShopingItemDivclass"></div>`)
+      const btmMinDiv= $(`<div class=""></div>`)
       const btmMin=$(`<button class="show">-</button>`)
-      const btnplus=$(`<button class="show">+</button>`)
-      ShopingDiv.append(ShopingItemDiv)
       
-      ShopingItemDiv.append(btmMin)
-      ShopingItemDiv.append([shoopingItem[i][0]]+":    ")
+
+      btmMinDiv.append(btmMin)
+      ShopingItemDiv.append(btmMinDiv)
+      
+      
+      const btnplusDiv= $(`<div class=""></div>`)
+      const btnplus=$(`<button class="show">+</button>`)
+      btnplusDiv.append(btnplus)
+      ShopingItemDiv.append(btnplusDiv)
+      
+
+     // ShopingItemDiv.append(btmMin)
+     const inputshDiv= $(`<div class=""></div>`)
+     inputshDiv.append([shoopingItem[i][0]]+":    ")
+
+     ShopingItemDiv.append(inputshDiv)
 
 
+      btnplusDiv.append(btnplus)
+      ShopingItemDiv.append(btnplusDiv)
+
+
+
+
+
+
+      const priceDiv= $(`<div class=""></div>`)
+      const nubberDiv= $(`<div class=""></div>`)
         m=JSON.parse([shoopingItem[i][1]])
 
-      ShopingItemDiv.append( m[0].num)
-      ShopingItemDiv.append( m[0].price)
-      ShopingItemDiv.append(btnplus)
-      ShopingItemDiv.append( `  <i class="fa fa-remove" style="font-size:24px;color:red"></i>`)
+        nubberDiv .append( m[0].num)
+      priceDiv.append( m[0].price)
+      ShopingItemDiv.append(nubberDiv)
+      ShopingItemDiv.append(priceDiv)
 
+      const deletDiv= $(`<div class=""></div>`)
 
+      deletDiv.append( `  <i class="fa fa-remove" style="font-size:24px;color:red"></i>`)
+
+     
+
+      const totalDiv= $(`<div class=""></div>`)
+
+        const total=(m[0].price )*(m[0].num )
+       totalDiv.append(total)
+       ShopingItemDiv.append(totalDiv)
+       ShopingItemDiv.append(deletDiv)
       btmMin.on("click",function(e){
          console.log("btmMin")
          console.log(e)
          console.log(this)
          })
          btnplus.on("click",function(){
-            console.log("btmplusn")
+            let neewtatal=total+m[0].price
             
+            totalDiv.append(neewtatal)
             })
             $(".fa-remove").on("click",function(){
                console.log("removvvv")
                
                })
 
-
+               ShopingDiv.append(ShopingItemDiv)
    }
+ 
    const checkOutDiv= $(`<div class=""></div>`)
    const btnOutcheck=$(`<button>CheckOut</button>`)
 
