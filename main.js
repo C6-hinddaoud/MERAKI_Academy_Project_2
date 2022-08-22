@@ -102,7 +102,11 @@ regesterDiv.append($(`
 
 <label   class="hidlogen grenReg" for="fname">Registration completed successfully  </label>
 
-<button id="tt" onClick="RegFun()" class="btnRegestration shareBtn">regestration</button>
+<button id="tt" onClick="RegFun()" class=" hideRegestrationbtn btnRegestration shareBtn">regestration</button>
+
+<button id="tt" onClick="goToLogin()" class="goLogin btnRegestration shareBtn">Login</button>
+
+
 `)
 
 
@@ -128,6 +132,18 @@ $(".btnlogin").on("click", () => {
 })
 
 
+const goToLogin=()=>{
+   console.log("hind")
+   $(".logpl").show()
+   regesterDiv.hide()
+   
+   loginDiv.append(loginuserpassdive)
+   $(".hidlogen").hide()
+
+   $(".btnreqhidden").hide()
+   
+  // login()
+}
 
 
 const login = () => {
@@ -175,6 +191,10 @@ $(".btnreqhidden").on("click", () => {
    $(".hidlogen").hide()
    loginDiv.append(regesterDiv)
    $(".grenReg").hide()
+   $(".goLogin").hide()
+   
+   
+   
 })
 
 
@@ -189,9 +209,10 @@ $(".btnreqhidden").on("click", () => {
    let newUser = { UserName: $("#RegId").val(), passwrd: $("#passwordId").val() }
    arrayUsers.push(newUser)
    $(".grenReg").show()
+   $(".goLogin").show()
+  $(".hideRegestrationbtn").hide()
 
 }
-
 
 
 
