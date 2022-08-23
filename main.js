@@ -1,4 +1,36 @@
 
+$.ajax({
+url:	"https://api.itbook.store/1.0/new",
+success:function(data){
+   alert("hi")
+   arrayBooks.Title=data.books.title
+   console.log(data)
+   arrayBooks.Description=data.books.subtitle
+   arrayBooks.price=data.books.price
+   arrayBooks.imgDiv=data.books.image
+},
+error:function(){
+   alert("gfd")
+   console.log("error")
+}
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let count = 0
 
 let arrayBooks = [{ category: "Historical Fiction", id: 1, description: "description1", Title: "title1", price: 5, src: "./images/book3.png", count: 0 }
@@ -917,12 +949,12 @@ const shoopingFun = function () {
       ShopingItemDiv.append(deletDiv)
       
       btmMin.on("click", function () {
-         DletOneItem(mytitale)
+         DletOneItem(mytitale,total)
       })
 
       btnplus.on("click", (e) => {
          debugger
-          addOneItem(mytitale)
+          addOneItem(mytitale,total)
         
       //   totalDiv.append(total)
 
@@ -932,7 +964,7 @@ const shoopingFun = function () {
 
       btmDeleteAll.on("click", function () {
          debugger
-         remove(mytitale)
+         remove(mytitale,total)
 
       })
 
@@ -948,7 +980,7 @@ const shoopingFun = function () {
 checkOutDiv.append(btnOutcheck)
 ShopingDiv.append(checkOutDiv)
 const checkOutLableDiv = $(`<div class=""></div>`)
-const checkOutLable = $(`<label for="">jjjj</label>`)
+const checkOutLable = $(`<label class="totalLableSum" for=""></label>`)
 checkOutLableDiv.append(checkOutLable)
 //checkOutDiv.append(checkOutLable
 //)
@@ -962,7 +994,7 @@ btnOutcheck.on("click",()=>{
 
 
 
-const addOneItem=(title)=>{
+const addOneItem=(title,total)=>{
    for(i=0;i<cart.length;i++)
    if(cart[i].Title==title){
     debugger
@@ -973,11 +1005,12 @@ const addOneItem=(title)=>{
   localStorage.setItem("myBookList", JSON.stringify(cart));
 
     shoopingFun()
+    checkoutArray.push(total)
 }
 }
 
-const DletOneItem=(title)=>{
-   for(i=0;i<cart.length;i++)
+const DletOneItem=(title,total)=>{
+   for(i=0;i<cart.length;i++){
    if(cart[i].Title==title){
     debugger
    // total = total + PriceAdd
@@ -987,11 +1020,12 @@ const DletOneItem=(title)=>{
   localStorage.setItem("myBookList", JSON.stringify(cart));
 
     shoopingFun()
-}
+    checkoutArray.push(total)
+}}
 }
 
 
-const remove =(title)=>{
+const remove =(title,total)=>{
    debugger
    for(i=0;i<cart.length;i++){
      
@@ -1004,11 +1038,22 @@ const remove =(title)=>{
    }
    localStorage.setItem("myBookList", JSON.stringify(cart));
       shoopingFun()
-
+      checkoutArray.push(total)
 }
 
 const checkOutFun=()=>{
- console.log( total)
+ 
+debugger
 
+let m= checkoutArray.reduce((acc, onTotle )=>{
+  return acc=acc+onTotle
+   
+   
+   },0)
+
+   
+   $(".totalLableSum").text(m)
 
 }
+
+
