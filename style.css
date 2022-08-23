@@ -5,13 +5,21 @@
 }
 
 
+
+
+ .btnSearch .searcDiv { 
+
+    color: #761313 !important ;
+    background-color:#b37022 !important;
+}
+
 h1 {
 
     color: red;
 }
 
 .main {
-    background-color: rgba(157, 127, 255, 0.527);
+    /* background-color: rgba(157, 127, 255, 0.527); */
     text-align: center;
 
 
@@ -67,12 +75,13 @@ h1 {
 .searcDiv {
     grid-area: search;
     display: flex;
+    
 
 
     height: 36px;
-    border: 14px #d3c4d9 solid;
+    border: 14px #b37022 solid;
     /* gap: 67px; */
-    background: #d3c4d9;
+    background: #b37022;
     border-radius: 18px;
 
 
@@ -91,9 +100,12 @@ h1 {
 .inpSearch {
     grid-area: inpSch;
     text-align: center;
+    color: #761313;
+  
 }
 
 .btnSearcg {
+    
     grid-area: btnSch
 }
 
@@ -171,7 +183,7 @@ h1 {
 .display {
     /* width: 300px !important;
     height: 300px !important; */
-    background-color: rgb(241, 212, 212);
+    /* background-color: rgb(241, 212, 212); */
     flex-wrap: wrap;
     grid-area: cont;
     display: grid;
@@ -210,7 +222,7 @@ h1 {
 
 
 .spanShooping {
-    background-color: pink;
+    /* background-color: pink; */
     flex-wrap: wrap;
     grid-area: cont;
     display: grid;
@@ -224,25 +236,27 @@ h1 {
         "BOOK1 "
 }
 
-.ShopingItemDivclass {
-
-    gap: 10PX;
-    /* grid-area: cont; */
-    /* display:grid; */
-    /* justify-items: center; */
-
-
-    /* //row-gap: 20px !important; */
-
-}
 
 .ShopingItemDivclass {
+    color:#b37022;
+    gap: 10PX; 
+    font-weight: bold;
     display: flex;
     flex-wrap: nowrap;
     justify-items: center;
     align-items: center;
     gap: 50px;
 }
+
+.totalLableSum{
+height: 20px;
+width: 50px !important;
+    /* background-color:#761313(221, 13, 13); */
+    color: #b37022;
+    
+    font-size: 30px;
+}
+
 
 th,
 tr {
@@ -284,14 +298,46 @@ tr {
     grid-area: BOOK4
 }
 
+.btndanger{
+    border: none;
+    font-size: 25px;
+    color: white;
+    background-color: red;
+}
+.btncheck{
+    width: 500px;
+    color: #761313;
+    background-color: #b37022;
+    font-size: 30px;
+    font-weight: bold;
+    border:5px #761313  double ;
+
+
+
+}
+
+
 .show {
-    width: 20px;
-    margin: 20px;
+    width: 30px;
+    margin: 30px;
+    color: #b37022;
+    font-size:20px;
+    background-color: #761313;
+    font-weight: bold;
+    
 }
 
 
 .footer {
-    grid-area: foot
+    grid-area: foot;
+    align-items: center;
+    justify-content: center;
+    color: #b37022;
+    background-color: #761313;
+    font-size: 30px;
+    font-weight: bold;
+    
+    
 }
 .hidlogen{
     color: red;
@@ -302,7 +348,18 @@ tr {
 .grenReg{
 color: green;
 
+
+
+
 }
+
+
+.show{
+
+
+
+}
+
 
 .mainsDiv {}
 

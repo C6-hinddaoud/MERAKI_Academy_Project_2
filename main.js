@@ -1,21 +1,28 @@
 
-$.ajax({
-url:	"https://api.itbook.store/1.0/new",
-success:function(data){
-   alert("hi")
-   arrayBooks.Title=data.books.title
-   console.log(data)
-   arrayBooks.Description=data.books.subtitle
-   arrayBooks.price=data.books.price
-   arrayBooks.imgDiv=data.books.image
-},
-error:function(){
-   alert("gfd")
-   console.log("error")
-}
 
 
-})
+// $.ajax({
+// url:	"https://api.itbook.store/1.0/new",
+// success:function(data){
+//    alert("hi")
+   
+
+//    let apiArrayBooks=data.books
+//    mainFun(data.books)
+//    arrayBooks.Title=data.books.title
+//    console.log(data)
+//    console.log(data.books)
+//    arrayBooks.Description=data.books.subtitle
+//    let apidata=data.books
+//    //arrayBooks.imgDiv=data.books
+// },
+// error:function(){
+//    alert("gfd")
+//    console.log("error")
+// }
+
+
+// })
 
 
 
@@ -66,7 +73,7 @@ const conten = $(".contener")
 const headDiv = $(`<div class="head main "></div>`)
 const spDiv = $(`<div class="sp main"> </div>`)
 const contentDiv = $(`<div class="content main "> </div>`)
-const footerDiv = $(`<div class="footer main">footer </div>`)
+const footerDiv = $(`<div class="footer main">Book store  </div>`)
 
 
 conten.append(headDiv)
@@ -342,7 +349,7 @@ const searchFun = (search) => {
 //functions
 arrayhistory = []
 arrayAdven = []
-const mainFun = (categ) => {
+const mainFun = (categ,data ) => {
    console.log("hind")
    //debugger
    $(".spanShooping").hide();
@@ -689,7 +696,12 @@ const add = function (iptId, bookPrice, bookTitle, elem) {
 
 const divSearch = $(`<div class="searcDiv"></div>`)
 const inputSearch = $(`<input class="inpSearch" type="text" name="" id="">`)
-const buttonSearch = $(`<button class=".btnSearch">search</button>`)
+const buttonSearch = $(`<button  Style="color: #b37022;
+border-block-color: #761313;
+background-color: #761313;
+width: 244px;
+height: 38px;
+border-radius: 11px;"   class=".btnSearch">search</button>`)
 divSearch.append()
 
 divSearch.append(inputSearch)
@@ -932,7 +944,7 @@ const shoopingFun = function () {
 
       const deletDiv = $(`<div class=""></div>`)
 
-      const btmDeleteAll = $(`<button class=" ">Delet</button>`)
+      const btmDeleteAll = $(`<button class="btndanger">Delete</button>`)
       deletDiv.append(btmDeleteAll)
      
 
@@ -975,7 +987,7 @@ const shoopingFun = function () {
    }
 
    const checkOutDiv = $(`<div class=""></div>`)
-   const btnOutcheck = $(`<button>CheckOut</button>`)
+   const btnOutcheck = $(`<button class="btncheck">CheckOut</button>`)
 
 checkOutDiv.append(btnOutcheck)
 ShopingDiv.append(checkOutDiv)
