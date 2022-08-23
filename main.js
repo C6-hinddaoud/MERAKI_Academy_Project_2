@@ -319,6 +319,12 @@ const mainFun = (categ) => {
    //  $(".main").show()
    $(".content").empty()
 
+
+
+
+
+
+
    for (i = 0; i < arrayBooks.length; i++) {
       if (arrayBooks[i].category == categ) {
          const content = $(".content")
@@ -461,36 +467,35 @@ const displyFun = function (objId, element) {
             console.log(arrboki)
             debugger
             ////not
+            if(cart.length==0){
+               let itemNumber = parseInt(inpCoun.val())
+               let newCoun = parseInt(arrboki.count) + itemNumber
+               arrboki.count = newCoun
+               sum = parseInt(sum) + parseInt(itemNumber)
+               $(".spanShoopingClass").text(sum)
+               cart.push(arrboki)
+               localStorage.setItem("myBookList", JSON.stringify(cart));
+
+
+            }else{
+
+
             for (i = 0; i < cart.length; i++) {
-               if (cart[i].Title != arrboki.Title) {
+               if (cart[i].Title == arrboki.Title) {
                   debugger
 
                   let itemNumber = parseInt(inpCoun.val())
-                  let newCoun = parseInt(arrboki.count) + itemNumber
-                  arrboki.count = newCoun
-                  sum = parseInt(sum) + parseInt(itemNumber)
-                  $(".spanShoopingClass").text(sum)
-                  cart.push(arrboki)
-                  return localStorage.setItem("myBookList", JSON.stringify(cart));
-
-
-                  ///////////////////////
-
-               }
-               else {
-                  debugger;
-                  let itemNumber = parseInt(inpCoun.val())
-                  arrboki.count = arrboki.count + itemNumber
+                  cart[i].count = cart[i].count + itemNumber
                   // arrboki.count =newCoun
                   //  sum = parseInt(sum) + parseInt(itemNumber)
                   //  $(".spanShoopingClass").text(sum)
 
                   //let itemNumber =  parseInt(inpCoun.val())
                   sum = parseInt(sum) + parseInt(itemNumber)
-                  return $(".spanShoopingClass").text(sum)
+                   $(".spanShoopingClass").text(sum)
                   // localStorage.setItem("myBookList", JSON.stringify(cart));
-               }
-            }
+         
+            
             // localStorage.setItem("myBookList", JSON.stringify(cart));
             //  let itemNumber =  parseInt(inpCoun.val())
 
@@ -499,6 +504,46 @@ const displyFun = function (objId, element) {
             //  $(".spanShoopingClass").text(sum)
             console.log(cart)
 
+
+
+////////////////////////
+                 
+         
+dispDiv.append(addDiv)
+///////
+
+
+conten.append(dispDiv)
+add(inpId, bookPrice, bookTitle, arrboki)
+
+return
+                  ///////////////////////
+
+               }
+            }
+
+
+            ////////////////////////////
+                  debugger;
+
+
+
+
+                  let itemNumber = parseInt(inpCoun.val())
+                  let newCoun = parseInt(arrboki.count) + itemNumber
+                  arrboki.count = newCoun
+                  sum = parseInt(sum) + parseInt(itemNumber)
+                  $(".spanShoopingClass").text(sum)
+                  cart.push(arrboki)
+                  localStorage.setItem("myBookList", JSON.stringify(cart));
+                 
+         
+
+
+
+
+                
+         }
          })
 
 
@@ -546,9 +591,7 @@ const add = function (iptId, bookPrice, bookTitle, elem) {
    //newCoun=elem.count +itemNumber
    // elem.count=newCoun
    console.log("test")
-   //console.log(localStorage.setItem(bookTitle,priceBook))
-
-   console.log("test")
+   
    //if (localStorage.hasOwnProperty(bookTitle)) {
    //localStorage.hasOwnProperty(bookTitle)
    // debugger
@@ -558,7 +601,7 @@ const add = function (iptId, bookPrice, bookTitle, elem) {
    /// let couning = JSON.parse(localStorage.getItem(bookTitle))
    /// localStorage.setItem(bookTitle, JSON.stringify(couning));
 
-   //localStorage.setItem("myBookList", JSON.stringify(cart));
+  localStorage.setItem("myBookList", JSON.stringify(cart));
    //counNum=couning[num]
 
    //couning = couning[0]
@@ -761,7 +804,14 @@ $(".fa-shopping-basket").on("click", function () {
 })
 
 
+///////////////////////////////
 
+
+ 
+
+
+
+let checkoutArray=[]
 
 const shoopingFun = function () {
    $(".display").hide()
@@ -789,12 +839,12 @@ const shoopingFun = function () {
    //ShopingDiv.append(diveTable)
    //divTable.append(mytable)
 
+ //  const TitlebtmMinDiv = $(`<div class=""></div>`)
+  // const TbtmMin = $(`<h3 class="show">Min</h3>`)
 
+  // TitlebtmMinDiv.append(TbtmMin)
+    //  ShopingItemDiv.append(TitlebtmMinDiv)
    for (i = 0; i < cart.length; i++) {
-
-
-
-
 
 
 
@@ -826,7 +876,7 @@ const shoopingFun = function () {
 
       // ShopingItemDiv.append(btmMin)
       const inputshDiv = $(`<div class=""></div>`)
-      inputshDiv.append(cart[i].Title)
+      inputshDiv.append(mytitale)
 
       ShopingItemDiv.append(inputshDiv)
 
@@ -843,70 +893,122 @@ const shoopingFun = function () {
       const nubberDiv = $(`<div class=""></div>`)
       //  m = JSON.parse(cart[i])
 
-      nubberDiv.append(cart[i].count)
-      priceDiv.append(cart[i].price)
+      nubberDiv.append(countAdd= cart[i].count)
+      priceDiv.append(PriceAdd=cart[i].price)
       ShopingItemDiv.append(nubberDiv)
       ShopingItemDiv.append(priceDiv)
 
       const deletDiv = $(`<div class=""></div>`)
 
-      deletDiv.append(`  <i class="fa fa-remove" style="font-size:24px;color:red"></i>`)
+      const btmDeleteAll = $(`<button class=" ">Delet</button>`)
+      deletDiv.append(btmDeleteAll)
+     
 
 
 
       const totalDiv = $(`<div class=""></div>`)
 
-      const total = (cart[i].count) * (cart[i].price)
+
+      
+      let total = (cart[i].count) * (cart[i].price)
+      
       totalDiv.append(total)
       ShopingItemDiv.append(totalDiv)
       ShopingItemDiv.append(deletDiv)
-      btmMin.on("click", function (e) {
-         console.log("btmMin")
-         console.log(e)
-         console.log(this)
+      
+      btmMin.on("click", function () {
+         DletOneItem(mytitale)
       })
 
       btnplus.on("click", (e) => {
-         // console.log(e.parentNode())
-         console.log(e)
-         console.log($(this).parent())
-         let neewtatal = total + m[0].price
-         console.log("kk")
-         // console.log($(this)[shoopingItem[$(this(i))][0]])
-         let couning = JSON.parse(localStorage.getItem(mytitale))
-         localStorage.setItem([shoopingItem[i][0]], JSON.stringify(couning));
+         debugger
+          addOneItem(mytitale)
+        
+      //   totalDiv.append(total)
 
-         couning = couning[0]
-         let oldNum = couning.num
-         let newNum = oldNum + itemNumber
-         let mybookarray = [{ price: bookPrice, num: newNum }]
-         localStorage.setItem([shoopingItem[i][0]], JSON.stringify(mybookarray))
-         totalDiv.append(neewtatal)
+        
 
+      })
 
+      btmDeleteAll.on("click", function () {
+         debugger
+         remove(mytitale)
 
       })
 
 
 
-      $(".fa-remove").on("click", function () {
-         console.log("removvvv")
-
-      })
-
+     
       ShopingDiv.append(ShopingItemDiv)
    }
 
    const checkOutDiv = $(`<div class=""></div>`)
    const btnOutcheck = $(`<button>CheckOut</button>`)
 
-
-
-
-
-
+checkOutDiv.append(btnOutcheck)
+ShopingDiv.append(checkOutDiv)
+const checkOutLableDiv = $(`<div class=""></div>`)
+const checkOutLable = $(`<label for="">jjjj</label>`)
+checkOutLableDiv.append(checkOutLable)
+//checkOutDiv.append(checkOutLable
+//)
+ShopingDiv.append(checkOutLableDiv)
+btnOutcheck.on("click",()=>{
+   checkOutFun()
+   
+   
+   })
 }
 
 
 
+const addOneItem=(title)=>{
+   for(i=0;i<cart.length;i++)
+   if(cart[i].Title==title){
+    debugger
+   // total = total + PriceAdd
+ 
+  
+    cart[i].count=cart[i].count+1
+  localStorage.setItem("myBookList", JSON.stringify(cart));
 
+    shoopingFun()
+}
+}
+
+const DletOneItem=(title)=>{
+   for(i=0;i<cart.length;i++)
+   if(cart[i].Title==title){
+    debugger
+   // total = total + PriceAdd
+    
+  
+    cart[i].count=cart[i].count-1
+  localStorage.setItem("myBookList", JSON.stringify(cart));
+
+    shoopingFun()
+}
+}
+
+
+const remove =(title)=>{
+   debugger
+   for(i=0;i<cart.length;i++){
+     
+      cart= cart.filter((elem,I)=>{
+     return elem.Title!=title
+     localStorage.setItem("myBookList", JSON.stringify(cart));
+      shoopingFun()
+
+   })
+   }
+   localStorage.setItem("myBookList", JSON.stringify(cart));
+      shoopingFun()
+
+}
+
+const checkOutFun=()=>{
+ console.log( total)
+
+
+}
