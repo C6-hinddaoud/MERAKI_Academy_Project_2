@@ -85,7 +85,21 @@ conten.append(spDiv)
 conten.append(contentDiv)
 conten.append(footerDiv)
 
-//===============================================================================================
+//=============================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+//==================================
 //searchFunction
 const body = $("body")
 const loginDiv = $(`<div class="logindiv"></div>`)
@@ -227,7 +241,6 @@ body.on('click', () => {
 
 
 
-
 $(".btnreqhidden").on("click", () => {
    $(".logpl").hide()
    $(".hidlogen").hide()
@@ -255,6 +268,7 @@ $(".btnreqhidden").on("click", () => {
   $(".hideRegestrationbtn").hide()
 
 }
+
 
 
 
@@ -804,8 +818,9 @@ FictionEvent.on("click", function () {
 
 
 
-// <!-- cotact us dive -->
 
+// <!-- cotact us dive -->
+const content = $(".content")
 const DivcontactUs = $(`<div class="DivcontactUs">
          
 </div>`)
@@ -842,12 +857,13 @@ DivcontactUs.append($(`<div class="masterfinal">
 </div>`
 )
 
-         )
          
+)
 
 
-       
-         $(".content").append( DivcontactUs)
+//body.append(DivcontactUs)
+    
+         
          
 // <!-- cotact us dive -->
 
@@ -881,16 +897,26 @@ headDiv.append(head3)
 headDiv.append(head4)
 headDiv.append(head5)
 
-head3.on("click",()=>{
+head3.on("click",function(){
    debugger
 console.log("kkkkkkkkkk")
-DivcontactUs.show()
+
 $(".display").hide();
 
    $(".spanShooping").hide();
    $(".content").hide();
+   DivcontactUs.show()
    
-   
+})
+head1.on("click",function(){
+console.log("jj")
+$(".spanShooping").hide();
+$(".display").hide();
+$(".content").hide();
+DivcontactUs.hide()
+  return $(".content").show();
+  
+
 })
 
 
@@ -1030,8 +1056,8 @@ const shoopingFun = function () {
       btnplus.on("click", (e) => {
        
           addOneItem(mytitale,total)
-       //checkoutArray=[]
-       // checkoutArray.push(total)
+      // checkoutArray=[]
+      // checkoutArray.push(total)
       //   totalDiv.append(total)
 
         
@@ -1085,11 +1111,12 @@ const addOneItem=(title,total)=>{
   localStorage.setItem("myBookList", JSON.stringify(cart));
   //$( ".ShopingItemDivclass.empty").empty();
   $(".spanShooping").empty()
-    shoopingFun()
+   // shoopingFun()
    //$(".spanShooping").empty()
-    checkoutArray=[]
+   checkoutArray=[]
     shoopingFun()
-    checkoutArray.push(total)
+   checkoutArray.push(total)
+   checkoutArray.pop()
 }
 }
 
@@ -1107,6 +1134,7 @@ const DletOneItem=(title,total)=>{
     checkoutArray=[]
     shoopingFun()
     checkoutArray.push(total)
+    checkoutArray.pop()
 }}
 }
 
@@ -1128,6 +1156,7 @@ const remove =(title,total)=>{
       checkoutArray=[]
       shoopingFun()
       checkoutArray.push(total)
+      checkoutArray.pop()
    //   checkoutArray.push(total)
 }
 
@@ -1142,8 +1171,11 @@ let m= checkoutArray.reduce((acc, onTotle )=>{
    },0)
 
    
-   $(".totalLableSum").text(m)
+   $(".totalLableSum").text("Your total Account is:" +m +"\n" + "  Your Check Out Copleted")
 
+                           
+cart=[]
+localStorage.clear()
 }
 
 

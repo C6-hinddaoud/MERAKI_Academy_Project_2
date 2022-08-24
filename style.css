@@ -135,7 +135,14 @@ font-size: 20px;
     
     grid-area: btnSch
 }
-
+.DivcontactUs{
+    background-color: RED;
+    grid-area: cont;
+   display: flex;
+   flex-wrap: warp;
+   grid-template-areas:
+   "BOOK1 BOOK2"
+ }
 .head {
     font-size: 20px;
     background-color: #761313;
@@ -296,7 +303,7 @@ font-size: 15px;
 height: 20px;
 width: 50px !important;
     /* background-color:#761313(221, 13, 13); */
-    color: #b37022;
+    color:green;
     
     font-size: 30px;
 }
@@ -549,10 +556,14 @@ input[type=text],input[type=password] , select {
       
    
      }
+    
      .masterfinal{
-   
-       /* display: flex; */
-       flex-wrap: warp;
+        /* grid-area: cont; */
+        /* grid-area: cont; */
+       display: flex;
+       /* flex-wrap: warp;
+       grid-template-areas:
+       "BOOK1 BOOK2" */
    
      }
      .masterfinal hr{
@@ -594,4 +605,6 @@ input[type=text],input[type=password] , select {
      }
 
      
-    
+    .chechoutspan{
+        color: #45a049;
+    }
