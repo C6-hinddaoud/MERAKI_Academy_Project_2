@@ -1,5 +1,5 @@
 
-
+// const array=[]
 
 // $.ajax({
 // url:	"https://api.itbook.store/1.0/new",
@@ -10,8 +10,10 @@
 //    let apiArrayBooks=data.books
 //    mainFun(data.books)
 //    arrayBooks.Title=data.books.title
-//    console.log(data)
-//    console.log(data.books)
+//    //console.log(data)
+//    array.push(data)
+//    console.log("inside",array)
+//   // console.log(data.books)
 //    arrayBooks.Description=data.books.subtitle
 //    let apidata=data.books
 //    //arrayBooks.imgDiv=data.books
@@ -26,6 +28,7 @@
 
 
 
+// console.log("out",array)
 
 
 
@@ -130,8 +133,8 @@ const logbackground = () => {
 const regesterDiv = $(`<div class="logpl"></div>`)
 
 regesterDiv.append($(`
-<label class="REG" for="fname">Regestration </label>
-<label class="lableRegestrtion" for="fname">RegeSrt  User Name </label>
+<label class="REG" for="fname"> </label>
+<label class="lableRegestrtion" for="fname">Register a username here </label>
 <input type="text" id="RegId" name="firstname" placeholder="Inter User Name ..">
 
 <label class="lableRegestrtion" for="lname">Inter Passwrd</label>
@@ -156,7 +159,7 @@ regesterDiv.append($(`
 
 
 
-
+//conten.append(masterfinal)
 
 
 
@@ -300,7 +303,7 @@ const searchFun = (search) => {
 
 
          const DiveSeeMore = $(`<div> </div>`)
-         const btnSeeMore = $(`<button>see more</button>`)
+         const btnSeeMore = $(`<button class="seeMoreclass" >see more</button>`)
 
          btnSeeMore.attr('id', arrayBooks[i].id);
          DivContent.append(DiveSeeMore)
@@ -341,7 +344,9 @@ const searchFun = (search) => {
 
 
 
-
+jQuery(function(){
+   jQuery('.spA').click();
+});
 //contentDiv.append(divSearch)
 
 
@@ -799,6 +804,52 @@ FictionEvent.on("click", function () {
 
 
 
+// <!-- cotact us dive -->
+
+const DivcontactUs = $(`<div class="DivcontactUs">
+         
+</div>`)
+
+DivcontactUs.append($(`<div class="masterfinal">
+<div class="f">
+    <h4>Contact Us</h4>
+    <hr>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere omnis libero nisi. Magnam, laudantium aspernatur.</p>
+    <i class="fa fa-facebook"></i> <span>07895445</span><br>
+    <i class="fa fa-facebook"></i>
+    <span>hind@gmail.com</span>
+    <br>
+    <i class="fa fa-facebook">
+        <span>location</span>
+    </i>
+
+
+    <div class=""><div class="gmap_canvas"><iframe width="300" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=1&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:50px;width:60px;}</style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
+
+
+</div>
+
+<div class="l"><h4>Send Us Message</h4>
+<hr>
+<input type="text" id="fname" name="firstname" placeholder="Your name..">
+<input type="text" id="lname" name="lastname" placeholder="Subject">
+<input type="text" id="lname" name="lastname" placeholder="Email">
+<textarea id="w3review" name="w3review" rows="4" cols="25" placeholder="Message">
+    
+    </textarea>
+    <input type="submit" value="Submit">
+</div>
+</div>`
+)
+
+         )
+         
+
+
+       
+         $(".content").append( DivcontactUs)
+         
+// <!-- cotact us dive -->
 
 
 
@@ -818,7 +869,7 @@ const can4 = $(`<div class="conBook4"> DB</div>`)
 
 const head1 = $(`<div class="head1"> Home</div>`)
 const head2 = $(`<div class="head2"> AboutUs</div>`)
-const head3 = $(`<div class="head3"> ContactUs</div>`)
+const head3 = $(`<div class="head3"> Contact Us</div>`)
 const head4 = $(`<div class="head4"> UserNamr</div>`)
 const head5 = $(`<div class="head5"> 
  <i class="fa fa-shopping-basket" style="font-size:24px;color:#b37022"></i>
@@ -830,7 +881,17 @@ headDiv.append(head3)
 headDiv.append(head4)
 headDiv.append(head5)
 
+head3.on("click",()=>{
+   debugger
+console.log("kkkkkkkkkk")
+DivcontactUs.show()
+$(".display").hide();
 
+   $(".spanShooping").hide();
+   $(".content").hide();
+   
+   
+})
 
 
 
@@ -858,6 +919,7 @@ $(".fa-shopping-basket").on("click", function () {
 let checkoutArray=[]
 
 const shoopingFun = function () {
+  
    $(".display").hide()
    ///
 
@@ -891,7 +953,7 @@ const shoopingFun = function () {
    for (i = 0; i < cart.length; i++) {
 
 
-
+      
 
       const ShopingItemDiv = $(`<div class="ShopingItemDivclass"></div>`)
       const btmMinDiv = $(`<div class=""></div>`)
@@ -959,15 +1021,17 @@ const shoopingFun = function () {
       totalDiv.append(total)
       ShopingItemDiv.append(totalDiv)
       ShopingItemDiv.append(deletDiv)
-      
+      //checkoutArray=[]
+      checkoutArray.push(total)
       btmMin.on("click", function () {
          DletOneItem(mytitale,total)
       })
 
       btnplus.on("click", (e) => {
-         debugger
+       
           addOneItem(mytitale,total)
-        
+       //checkoutArray=[]
+       // checkoutArray.push(total)
       //   totalDiv.append(total)
 
         
@@ -975,7 +1039,7 @@ const shoopingFun = function () {
       })
 
       btmDeleteAll.on("click", function () {
-         debugger
+       
          remove(mytitale,total)
 
       })
@@ -998,8 +1062,10 @@ checkOutLableDiv.append(checkOutLable)
 //)
 ShopingDiv.append(checkOutLableDiv)
 btnOutcheck.on("click",()=>{
-   checkOutFun()
    
+  // $(".spanShooping").empty()
+   checkOutFun()
+  // checkoutArray.push(total)
    
    })
 }
@@ -1007,6 +1073,7 @@ btnOutcheck.on("click",()=>{
 
 
 const addOneItem=(title,total)=>{
+   debugger
    for(i=0;i<cart.length;i++)
    if(cart[i].Title==title){
     debugger
@@ -1014,8 +1081,13 @@ const addOneItem=(title,total)=>{
  
   
     cart[i].count=cart[i].count+1
+   
   localStorage.setItem("myBookList", JSON.stringify(cart));
-
+  //$( ".ShopingItemDivclass.empty").empty();
+  $(".spanShooping").empty()
+    shoopingFun()
+   //$(".spanShooping").empty()
+    checkoutArray=[]
     shoopingFun()
     checkoutArray.push(total)
 }
@@ -1024,13 +1096,15 @@ const addOneItem=(title,total)=>{
 const DletOneItem=(title,total)=>{
    for(i=0;i<cart.length;i++){
    if(cart[i].Title==title){
-    debugger
+  
    // total = total + PriceAdd
     
   
     cart[i].count=cart[i].count-1
   localStorage.setItem("myBookList", JSON.stringify(cart));
-
+  $(".spanShooping").empty()
+   
+    checkoutArray=[]
     shoopingFun()
     checkoutArray.push(total)
 }}
@@ -1038,7 +1112,7 @@ const DletOneItem=(title,total)=>{
 
 
 const remove =(title,total)=>{
-   debugger
+   
    for(i=0;i<cart.length;i++){
      
       cart= cart.filter((elem,I)=>{
@@ -1049,8 +1123,12 @@ const remove =(title,total)=>{
    })
    }
    localStorage.setItem("myBookList", JSON.stringify(cart));
+   $(".spanShooping").empty()
+      
+      checkoutArray=[]
       shoopingFun()
       checkoutArray.push(total)
+   //   checkoutArray.push(total)
 }
 
 const checkOutFun=()=>{

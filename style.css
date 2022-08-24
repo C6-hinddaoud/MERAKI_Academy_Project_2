@@ -4,8 +4,38 @@
 
 }
 
+#inpAdd1{
+
+text-align: center;
+color: #761313;
+border-color: #b37022;
+font-size: 20px;
+}
+h3{
 
 
+    color:  #761313;
+}
+p{
+  color: #761313;
+  background-color:  #b37022; 
+}
+
+
+
+.btnAddClass{
+
+width: 500px;
+color: #761313;
+background-color: #b37022;
+border:5px #761313  solid;
+font-weight: bold;
+font-size: 20px;
+}
+.btnAddClass:active{ 
+    background-color: green;
+
+}
 
  .btnSearch .searcDiv { 
 
@@ -13,10 +43,7 @@
     background-color:#b37022 !important;
 }
 
-h1 {
 
-    color: red;
-}
 
 .main {
     /* background-color: rgba(157, 127, 255, 0.527); */
@@ -184,6 +211,7 @@ h1 {
     /* width: 300px !important;
     height: 300px !important; */
     /* background-color: rgb(241, 212, 212); */
+    border:5px #761313 solid;
     flex-wrap: wrap;
     grid-area: cont;
     display: grid;
@@ -235,6 +263,22 @@ h1 {
     grid-template-areas:
         "BOOK1 "
 }
+
+
+
+.seeMoreclass{
+color:#b37022;
+background-color: #761313;
+font-weight: bold;
+border: none;
+
+width: 200px;
+height:20px;
+font-size: 15px;
+}
+
+
+
 
 
 .ShopingItemDivclass {
@@ -424,12 +468,17 @@ input[type=text],input[type=password] , select {
     border-radius: 4px;
     cursor: pointer; */
   }
+  .shareBtn:active{
+    color: #45a049;
+    background-color: #45a049;
+  }
   .shareBtn{
     font-size: 20px;
     font-weight: bold;
     
     width: 100%;
-    background-color:  rgb(191 171 40);
+    /* background-color:  rgb(191 171 40);
+    background-color: rgb(191 171 40); */
     color: rgb(7, 6, 0);
     padding: 14px 20px;
     margin: 8px 0;
@@ -455,3 +504,94 @@ input[type=text],input[type=password] , select {
     background-color: #b37022;
     color: #761313;
   }
+
+
+  img:hover {
+    animation: shake 2.0s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  /* contact us style */
+
+  .seqp{
+    flex-direction: row;
+    flex-wrap: wrap;
+   
+     }
+     .Spic  {
+   margin: 5px;
+       width: 100%!important;
+       height: 100px  !important;
+     
+   background-image: url('./images/2.jpg');
+     }
+     .seqp p{
+      
+       margin-left: 5px;
+     }
+     .ic{
+       flex-direction: row;
+       
+      
+   
+     }
+     .masterfinal{
+   
+       /* display: flex; */
+       flex-wrap: warp;
+   
+     }
+     .masterfinal hr{
+   
+       color:rgb(216, 164, 19) ;
+       margin-left: 5px;
+           border-bottom: 3PX rgb(216, 164, 19) solid;
+           width:200px;
+   
+     }
+     .f{
+       width: 50%;
+       padding-left: 5px;
+     }
+     .l{
+   width: 50%;
+   padding-left: 5px;
+     }
+   
+   
+     input[type=submit] {
+       width: 50%;
+       padding: 12px 20px;
+       margin: 8px 10px;
+       display: inline-block;
+       border: 1px solid #ccc;
+       border-radius: 4px;
+       box-sizing: border-box;
+     }
+     input[type=submit] {
+       background-color: #45414b;
+       color: rgb(209, 173, 13);
+       font-weight: bold ;
+       font-size: 20px;
+       float: left;
+     } 
+     .masterfinal{
+        
+     }
+
+     
+    
