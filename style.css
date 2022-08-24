@@ -1,12 +1,12 @@
-.min {
+/* .min {
     width: 100px;
     justify-items: start;
     margin-left: 6px;
-}
-.spanShooping div{
+} */
+/* .spanShooping div{
     width:600px;
 }
-
+ */
 
 .searcDiv {
     height: 30px;
@@ -14,43 +14,46 @@
 
 }
 
-.inpaddd{
+.inpaddd {
 
-text-align: center;
-color: #761313;
-border-color: #b37022;
-font-size: 20px;
-}
-h3{
-
-
-    color:  #761313;
-}
-p{
-  color: #761313;
-  background-color:  #b37022; 
+    text-align: center;
+    color: #761313;
+    border-color: #b37022;
+    font-size: 20px;
 }
 
+h3 {
 
 
-.btnAddClass{
-
-width: 500px;
-color: #761313;
-background-color: #b37022;
-border:5px #761313  solid;
-font-weight: bold;
-font-size: 20px;
+    color: #761313;
 }
-.btnAddClass:active{ 
+
+p {
+    color: #761313;
+    background-color: #b37022;
+}
+
+
+
+.btnAddClass {
+
+    width: 500px;
+    color: #761313;
+    background-color: #b37022;
+    border: 5px #761313 solid;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.btnAddClass:active {
     background-color: green;
 
 }
 
- .btnSearch .searcDiv { 
+.btnSearch .searcDiv {
 
-    color: #761313 !important ;
-    background-color:#b37022 !important;
+    color: #761313 !important;
+    background-color: #b37022 !important;
 }
 
 
@@ -112,7 +115,7 @@ font-size: 20px;
 .searcDiv {
     grid-area: search;
     display: flex;
-    
+
 
 
     height: 36px;
@@ -138,21 +141,23 @@ font-size: 20px;
     grid-area: inpSch;
     text-align: center;
     color: #761313;
-  
+
 }
 
 .btnSearcg {
-    
+
     grid-area: btnSch
 }
-.DivcontactUs{
+
+.DivcontactUs {
     /* background-color: RED; */
     grid-area: cont;
-   display: flex;
-   flex-wrap: warp;
-   grid-template-areas:
-   "BOOK1 BOOK2"
- }
+    display: flex;
+    flex-wrap: warp;
+    grid-template-areas:
+        "BOOK1 BOOK2"
+}
+
 .head {
     font-size: 20px;
     background-color: #761313;
@@ -228,7 +233,7 @@ font-size: 20px;
     /* width: 300px !important;
     height: 300px !important; */
     /* background-color: rgb(241, 212, 212); */
-    border:5px #761313 solid;
+    border: 5px #761313 solid;
     flex-wrap: wrap;
     grid-area: cont;
     display: grid;
@@ -283,15 +288,15 @@ font-size: 20px;
 
 
 
-.seeMoreclass{
-color:#b37022;
-background-color: #761313;
-font-weight: bold;
-border: none;
+.seeMoreclass {
+    color: #b37022;
+    background-color: #761313;
+    font-weight: bold;
+    border: none;
 
-width: 200px;
-height:20px;
-font-size: 15px;
+    width: 200px;
+    height: 20px;
+    font-size: 15px;
 }
 
 
@@ -299,8 +304,8 @@ font-size: 15px;
 
 
 .ShopingItemDivclass {
-    color:#b37022;
-    gap: 10PX; 
+    color: #b37022;
+    gap: 10PX;
     font-weight: bold;
     display: flex;
     flex-wrap: nowrap;
@@ -309,12 +314,12 @@ font-size: 15px;
     gap: 50px;
 }
 
-.totalLableSum{
-height: 20px;
-width: 50px !important;
+.totalLableSum {
+    height: 20px;
+    width: 50px !important;
     /* background-color:#761313(221, 13, 13); */
-    color:green;
-    
+    color: green;
+
     font-size: 30px;
 }
 
@@ -340,7 +345,7 @@ tr {
 }
 
 .spanShoopingClass {
-    color:  #b37022
+    color: #b37022
 }
 
 .conBook1 {
@@ -359,19 +364,20 @@ tr {
     grid-area: BOOK4
 }
 
-.btndanger{
+.btndanger {
     border: none;
     font-size: 25px;
     color: white;
     background-color: red;
 }
-.btncheck{
+
+.btncheck {
     width: 500px;
     color: #761313;
     background-color: #b37022;
     font-size: 30px;
     font-weight: bold;
-    border:5px #761313  double ;
+    border: 5px #761313 double;
 
 
 
@@ -382,10 +388,10 @@ tr {
     width: 30px;
     margin: 30px;
     color: #b37022;
-    font-size:20px;
+    font-size: 20px;
     background-color: #761313;
     font-weight: bold;
-    
+
 }
 
 
@@ -397,17 +403,19 @@ tr {
     background-color: #761313;
     font-size: 30px;
     font-weight: bold;
-    
-    
+
+
 }
-.hidlogen{
+
+.hidlogen {
     color: red;
     text-align: center;
     margin-left: 100px;
     display: hidden;
 }
-.grenReg{
-color: green;
+
+.grenReg {
+    color: green;
 
 
 
@@ -415,11 +423,7 @@ color: green;
 }
 
 
-.show{
-
-
-
-}
+.show {}
 
 
 .mainsDiv {}
@@ -438,20 +442,21 @@ color: green;
 .nave {}
 
 
-.logindiv{
-    font-size:15px ;
+.logindiv {
+    font-size: 15px;
     display: grid;
     background-image: url("./images/bgb3.png");
     background-repeat: no-repeat, repeat;
-    background-size: 100%  100% ;
+    background-size: 100% 100%;
     /* background-size: cover; */
-   /* width: 100; */
+    /* width: 100; */
     height: 600px;
     align-items: center;
     justify-items: center;
 
 }
-.logpl{
+
+.logpl {
     background-color: rgb(191 171 40);
     opacity: 0.8;
     height: 400px;
@@ -459,19 +464,21 @@ color: green;
 }
 
 
-input[type=text],input[type=password] , select {
+input[type=text],
+input[type=password],
+select {
     color: black;
     font-size: 15px;
-    width:100%;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-  }
-  
-  .btnlogin {
+}
+
+.btnlogin {
     /* font-size: 20px;
     font-weight: bold;
     
@@ -484,149 +491,192 @@ input[type=text],input[type=password] , select {
    border: none;
     border-radius: 4px;
     cursor: pointer; */
-  }
-  .shareBtn:active{
+}
+
+.shareBtn:active {
     color: #45a049;
     background-color: #45a049;
-  }
-  .shareBtn{
+}
+
+.shareBtn {
     font-size: 20px;
     font-weight: bold;
-    
+
     width: 100%;
     /* background-color:  rgb(191 171 40);
     background-color: rgb(191 171 40); */
     color: rgb(7, 6, 0);
     padding: 14px 20px;
     margin: 8px 0;
-   opacity: 0.5;
-   border: none;
+    opacity: 0.5;
+    border: none;
     border-radius: 4px;
     cursor: pointer;
 
-  }
-  
-  input[type=submit]:hover {
-    background-color: #45a049;
-  }
-  .lablelogib{
-    font-size:15px !important ;
-    margin: 10px;
-  }
+}
 
-  .btnlogin:hover{
-   color: rgb(164, 37, 17);
-  }
-  .button{
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.lablelogib {
+    font-size: 15px !important;
+    margin: 10px;
+}
+
+.btnlogin:hover {
+    color: rgb(164, 37, 17);
+}
+
+.button {
     background-color: #b37022;
     color: #761313;
-  }
+}
 
 
-  img:hover {
+img:hover {
     animation: shake 2.0s;
     animation-iteration-count: infinite;
-  }
-  
-  @keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
-  }
+}
 
-  /* contact us style */
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
 
-  .seqp{
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+/* contact us style */
+
+.seqp {
     flex-direction: row;
     flex-wrap: wrap;
-   
-     }
-     .Spic  {
-   margin: 5px;
-       width: 100%!important;
-       height: 100px  !important;
-     
-   background-image: url('./images/2.jpg');
-     }
-     p{
 
-        color: #761313;
-        background-color: #b37022;
-        width: 180px;
-        text-align: left;
-        padding: 27px;
-        font-weight: bold;
-        border-radius: 8px;
+}
 
-     }
-     .seqp p{
-      
-       margin-left: 5px;
-     }
-     .ic{
-       flex-direction: row;
-       
-      
-   
-     }
-    
-     .masterfinal{
-        height: 620px;
-        /* grid-area: cont; */
-        /* grid-area: cont; */
-       display: flex;
-       /* flex-wrap: warp;
+.Spic {
+    margin: 5px;
+    width: 100% !important;
+    height: 100px !important;
+
+    background-image: url('./images/2.jpg');
+}
+
+p {
+
+    color: #761313;
+    background-color: #b37022;
+    width: 180px;
+    text-align: left;
+    padding: 27px;
+    font-weight: bold;
+    border-radius: 8px;
+
+}
+
+.seqp p {
+
+    margin-left: 5px;
+}
+
+.ic {
+    flex-direction: row;
+
+
+
+}
+
+.masterfinal {
+    height: 620px;
+    /* grid-area: cont; */
+    /* grid-area: cont; */
+    display: flex;
+    /* flex-wrap: warp;
        grid-template-areas:
        "BOOK1 BOOK2" */
-   
-     }
-     .masterfinal hr{
-   
-       color:rgb(216, 164, 19) ;
-       margin-left: 5px;
-           border-bottom: 3PX rgb(216, 164, 19) solid;
-           width:200px;
-   
-     }
-     .f{
-        width: 37%;
-       padding-left: 5px;
-     }
-     .l{
-   width: 50%;
-   padding-left: 5px;
-     }
-   
-   
-     input[type=submit] {
-       width: 50%;
-       padding: 12px 20px;
-       margin: 8px 10px;
-       display: inline-block;
-       border: 1px solid #ccc;
-       border-radius: 4px;
-       box-sizing: border-box;
-     }
-     input[type=submit] {
-       background-color: #45414b;
-       color: rgb(209, 173, 13);
-       font-weight: bold ;
-       font-size: 20px;
-       float: left;
-     } 
-     .masterfinal{
-        
-     }
 
-     
-    .chechoutspan{
-        color: #45a049;
-    }
+}
+
+.masterfinal hr {
+
+    color: rgb(216, 164, 19);
+    margin-left: 5px;
+    border-bottom: 3PX rgb(216, 164, 19) solid;
+    width: 200px;
+
+}
+
+.f {
+    width: 37%;
+    padding-left: 5px;
+}
+
+.l {
+    width: 50%;
+    padding-left: 5px;
+}
+
+
+input[type=submit] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    background-color: #45414b;
+    color: rgb(209, 173, 13);
+    font-weight: bold;
+    font-size: 20px;
+    float: left;
+}
+
+.masterfinal {}
+
+
+.chechoutspan {
+    color: #45a049;
+}

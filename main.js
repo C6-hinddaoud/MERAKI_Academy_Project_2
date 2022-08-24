@@ -817,9 +817,12 @@ FictionEvent.on("click", function () {
 
 
 
-
-
-
+// <!-- about us dive -->
+const conabout = $(".content")
+const AboutUsDv = $(`<div class="AboutUsDv">`)
+const AboutUs = $(`<div class="AboutUs">`)
+AboutUs.append(AboutUs)
+// <!-- about us dive -->
 
 
 // <!-- cotact us dive -->
