@@ -22,11 +22,18 @@
     font-size: 20px;
 }
 
-h3 {
 
+    h3 {
+        color: #761313;
+        background: wheat;
+        color: #761313;
+        padding: 6px;
+    }
 
-    color: #761313;
-}
+    .hi{
+        width: 200px;
+    }
+
 
 p {
     color: #761313;
@@ -158,6 +165,17 @@ p {
         "BOOK1 BOOK2"
 }
 
+
+.AboutUsDv{
+    background-image: url("/images/bgb4.png");
+    grid-area: cont;
+    grid-template-areas:
+    "BOOK1 BOOK2"
+    "BOOK1 BOOK4"
+    
+}
+
+
 .head {
     font-size: 20px;
     background-color: #761313;
@@ -230,6 +248,7 @@ p {
 }
 
 .display {
+    background-image: url("./images/bgb5.png");
     /* width: 300px !important;
     height: 300px !important; */
     /* background-color: rgb(241, 212, 212); */
@@ -272,6 +291,8 @@ p {
 
 
 .spanShooping {
+    background-image: url("./images/bgb7.png");
+    background-size: 100% 100%;
     /* background-color: pink; */
     flex-wrap: wrap;
     grid-area: cont;
@@ -315,6 +336,7 @@ p {
 }
 
 .totalLableSum {
+    background-color: white;
     height: 20px;
     width: 50px !important;
     /* background-color:#761313(221, 13, 13); */
@@ -330,6 +352,7 @@ tr {
 }
 
 .content {
+    background-image: url("images/bgb4.png");
     flex-wrap: wrap;
     grid-area: cont;
     display: grid;

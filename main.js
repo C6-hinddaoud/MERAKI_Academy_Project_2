@@ -282,6 +282,7 @@ const RegFun = () => {
 
 const searchFun = (search) => {
    //debugger
+   $(".AboutUsDv").hide();
    $(".display").hide();
    DivcontactUs.hide()
    $(".spanShooping").hide();
@@ -375,6 +376,7 @@ const mainFun = (categ, data) => {
    console.log("hind")
    //debugger
    $(".spanShooping").hide();
+   $(".AboutUsDv").hide();
    $(".display").hide();
    $(".content").show()
    //  $(".main").show()
@@ -819,9 +821,9 @@ FictionEvent.on("click", function () {
 
 // <!-- about us dive -->
 const conabout = $(".content")
-const AboutUsDv = $(`<div class="AboutUsDv">`)
-const AboutUs = $(`<div class="AboutUs">`)
-AboutUs.append(AboutUs)
+const AboutUsDv = $(`<div class="AboutUsDv"></div>`)
+const AboutUs = $(`<div class="AboutUs"></div>`)
+AboutUsDv .append(AboutUs)
 // <!-- about us dive -->
 
 
@@ -909,7 +911,7 @@ head3.on("click", function () {
 
 
    $(".display").hide();
-
+   $(".AboutUsDv").hide();
    $(".spanShooping").hide();
    $(".content").hide();
    DivcontactUs.show()
@@ -921,7 +923,20 @@ head1.on("click", function () {
    $(".display").hide();
    $(".content").hide();
    DivcontactUs.hide()
+   $(".AboutUsDv").hide();
    return $(".content").show();
+
+
+})
+
+
+head2.on("click", function () {
+
+   $(".spanShooping").hide();
+   $(".display").hide();
+   $(".content").hide();
+   DivcontactUs.hide();
+  conten.append(AboutUsDv);
 
 
 })
@@ -952,7 +967,7 @@ $(".fa-shopping-basket").on("click", function () {
 let checkoutArray = []
 
 const shoopingFun = function () {
-
+   $(".AboutUsDv").hide();
    $(".display").hide()
    ///
 
