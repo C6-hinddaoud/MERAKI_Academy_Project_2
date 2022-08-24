@@ -43,24 +43,27 @@
 
 let count = 0
 
-let arrayBooks = [{ category: "Historical Fiction", id: 1, description: "description1", Title: "title1", price: 5, src: "./images/book3.png", count: 0 }
-   , { category: "Historical Fiction", id: 2, description: "description1", Title: "title2", price: 5, src: "./images/book4.png", count: 0 }
+let arrayBooks = [{ category: "Historical Fiction", id: 1, description:" Book Description : " + " An essential element of historical fiction is that it is set in the past and pays", Title: "The NgtinGald", price: 60, src: "./images/bn1.png", count: 0 }
+   , { category: "Historical Fiction", id: 2, description: " Book Description : " +"Historical fiction is a literary genre in which the plot takes place in a ·", Title: "Ken Fllett", price: 70, src: "./images/bn2.png", count: 0 }
 
 
 
 
-   , { category: "Adventure", id: 3, description: "description2", Title: "title3", price: 15, src: "./images/book1.png", count: 0 }
+   , { category: "Adventure", id: 3, description:" Book Description : " + "It was first published in French in 1864, then reissued in 1867 in a revised and expanded edition. Professor Otto Lidenbrock is the tale's central figur", Title: "Robison groso", price: 15, src: "./images/bna2.png", count: 0 }
 
-   , { category: "Adventure", id: 4, description: "description2", Title: "title4", price: 15, src: "./images/book2.png", count: 0 }
-
-   , { category: "Classics", id: 5, description: "description3", Title: "title5", price: 25, src: "./images/book5.png", count: 0 }
+   , { category: "Adventure", id: 4, description:" Book Description : " + "King Solomon's Mines (1885) is a popular novel by the English Victorian adventure writer and fabulist Sir H. Rider Haggard.", Title: "King Solomons", price: 100, src: "./images/bna1.png", count: 0 }
 
 
-   , { category: "Classics", id: 6, description: "description3", Title: "title6", price: 25, src: "./images/book7.png", count: 0 }
 
-   , { category: "Literary Fiction", id: 7, description: "description4", Title: "title7", price: 35, src: "./images/book8.png", count: 0 }
 
-   , { category: "Literary Fiction", id: 8, description: "description4", Title: "titnew", price: 35, src: "./images/book4.png", count: 0 }
+   , { category: "Classics", id: 5, description:" Book Description : " + "Dracula is a novel by Bram Stoker, published in 1897. As an epistolary novel, the narrative is related through letters, diary entries",Title:" Dracula", price: 100, src: "./images/bnc2.png", count: 0 }
+
+
+   , { category: "Classics", id: 6, description:" Book Description : " + "Beloved is a 1987 novel by the American writer Toni Morrison. Set after the American Civil War, it tells the story of a family of formerly", Title: "Beloved", price: 25, src: "./images/bnc1.png", count: 0 }
+
+   , { category: "Literary Fiction", id: 7, description:" Book Description : " + "A Clue-like, locked-room mystery and a heartwarming journey of the spirit, The Maid explores what it means to be the same as everyone else and yet entirely", Title: "Maid", price: 35, src: "./images/bnl1.png", count: 0 }
+
+   , { category: "Literary Fiction", id: 8, description:" Book Description : " + "Yaa Gyasi's Homegoing is an ambitious and powerful novel which follows the descendants of two half-sisters in Ghana", Title: "The Feel", price: 35, src: "./images/bnl2.png", count: 0 }
 ]
 
 ///usersArray
@@ -260,7 +263,7 @@ $(".btnreqhidden").on("click", () => {
 
 
 
-   console.log("rashshshsh")
+  
    let newUser = { UserName: $("#RegId").val(), passwrd: $("#passwordId").val() }
    arrayUsers.push(newUser)
    $(".grenReg").show()
@@ -280,7 +283,7 @@ $(".btnreqhidden").on("click", () => {
 const searchFun = (search) => {
    //debugger
    $(".display").hide();
-
+   DivcontactUs.hide()
    $(".spanShooping").hide();
    $(".content").show()
    $(".content").empty()
@@ -502,7 +505,7 @@ const displyFun = function (objId, element) {
 
 
 
-         const inpCoun = $(`<input type="number" min="1"   name="" id="">`)
+         const inpCoun = $(`<input class="inpaddd" type="number" min="1"   name="" id="">`)
          inpCoun.attr('id', "inpAdd" + arrayBooks[i].id);
          const inpId = "inpAdd" + arrayBooks[i].id
          console.log(inpId)
@@ -831,7 +834,7 @@ DivcontactUs.append($(`<div class="masterfinal">
     <hr>
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere omnis libero nisi. Magnam, laudantium aspernatur.</p>
     <i class="fa fa-facebook"></i> <span>07895445</span><br>
-    <i class="fa fa-facebook"></i>
+    <i class="fas fa-at"></i>
     <span>hind@gmail.com</span>
     <br>
     <i class="fa fa-facebook">
@@ -852,16 +855,16 @@ DivcontactUs.append($(`<div class="masterfinal">
 <textarea id="w3review" name="w3review" rows="4" cols="25" placeholder="Message">
     
     </textarea>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Send">
 </div>
 </div>`
 )
 
-         
+     
 )
 
 
-//body.append(DivcontactUs)
+
     
          
          
@@ -898,6 +901,7 @@ headDiv.append(head4)
 headDiv.append(head5)
 
 head3.on("click",function(){
+   conten.append(DivcontactUs) 
    debugger
 console.log("kkkkkkkkkk")
 
@@ -926,7 +930,7 @@ console.log(localStorage)
 //const cart = []
 $(".fa-shopping-basket").on("click", function () {
    shoopingItem = Object.entries(localStorage)
-
+   $("DivcontactUs").hide()
    //console.log(localStorage)
    //console.log(localStorage["title2"])
    //console.log("span")
@@ -976,13 +980,18 @@ const shoopingFun = function () {
 
   // TitlebtmMinDiv.append(TbtmMin)
     //  ShopingItemDiv.append(TitlebtmMinDiv)
+
+
+    const increaseDiv = $(`<div class="ShopingItemDivclass"><h3 class="w">minus</h3><h3>Taitle Book</h3><h3>plus</h3><h3> Numbers</h3><h3>Price </h3><h3>Total  </h3><h3>Delete</h3></div>`)
+    ShopingDiv.append(increaseDiv)
+
    for (i = 0; i < cart.length; i++) {
 
 
       
 
       const ShopingItemDiv = $(`<div class="ShopingItemDivclass"></div>`)
-      const btmMinDiv = $(`<div class=""></div>`)
+      const btmMinDiv = $(`<div class="min"></div>`)
       const btmMin = $(`<button class="show">-</button>`)
 
 
