@@ -5,7 +5,7 @@
 // url:	"https://api.itbook.store/1.0/new",
 // success:function(data){
 //    alert("hi")
-   
+
 
 //    let apiArrayBooks=data.books
 //    mainFun(data.books)
@@ -43,27 +43,27 @@
 
 let count = 0
 
-let arrayBooks = [{ category: "Historical Fiction", id: 1, description:" Book Description : " + " An essential element of historical fiction is that it is set in the past and pays", Title: "The NgtinGald", price: 60, src: "./images/bn1.png", count: 0 }
-   , { category: "Historical Fiction", id: 2, description: " Book Description : " +"Historical fiction is a literary genre in which the plot takes place in a ·", Title: "Ken Fllett", price: 70, src: "./images/bn2.png", count: 0 }
+let arrayBooks = [{ category: "Historical Fiction", id: 1, description: " Book Description : " + " An essential element of historical fiction is that it is set in the past and pays", Title: "The NgtinGald", price: 60, src: "./images/bn1.png", count: 0 }
+   , { category: "Historical Fiction", id: 2, description: " Book Description : " + "Historical fiction is a literary genre in which the plot takes place in a ·", Title: "Ken Fllett", price: 70, src: "./images/bn2.png", count: 0 }
 
 
 
 
-   , { category: "Adventure", id: 3, description:" Book Description : " + "It was first published in French in 1864, then reissued in 1867 in a revised and expanded edition. Professor Otto Lidenbrock is the tale's central figur", Title: "Robison groso", price: 15, src: "./images/bna2.png", count: 0 }
+   , { category: "Adventure", id: 3, description: " Book Description : " + "It was first published in French in 1864, then reissued in 1867 in a revised and expanded edition. Professor Otto Lidenbrock is the tale's central figur", Title: "Robison groso", price: 15, src: "./images/bna2.png", count: 0 }
 
-   , { category: "Adventure", id: 4, description:" Book Description : " + "King Solomon's Mines (1885) is a popular novel by the English Victorian adventure writer and fabulist Sir H. Rider Haggard.", Title: "King Solomons", price: 100, src: "./images/bna1.png", count: 0 }
-
-
+   , { category: "Adventure", id: 4, description: " Book Description : " + "King Solomon's Mines (1885) is a popular novel by the English Victorian adventure writer and fabulist Sir H. Rider Haggard.", Title: "King Solomons", price: 100, src: "./images/bna1.png", count: 0 }
 
 
-   , { category: "Classics", id: 5, description:" Book Description : " + "Dracula is a novel by Bram Stoker, published in 1897. As an epistolary novel, the narrative is related through letters, diary entries",Title:" Dracula", price: 100, src: "./images/bnc2.png", count: 0 }
 
 
-   , { category: "Classics", id: 6, description:" Book Description : " + "Beloved is a 1987 novel by the American writer Toni Morrison. Set after the American Civil War, it tells the story of a family of formerly", Title: "Beloved", price: 25, src: "./images/bnc1.png", count: 0 }
+   , { category: "Classics", id: 5, description: " Book Description : " + "Dracula is a novel by Bram Stoker, published in 1897. As an epistolary novel, the narrative is related through letters, diary entries", Title: " Dracula", price: 100, src: "./images/bnc2.png", count: 0 }
 
-   , { category: "Literary Fiction", id: 7, description:" Book Description : " + "A Clue-like, locked-room mystery and a heartwarming journey of the spirit, The Maid explores what it means to be the same as everyone else and yet entirely", Title: "Maid", price: 35, src: "./images/bnl1.png", count: 0 }
 
-   , { category: "Literary Fiction", id: 8, description:" Book Description : " + "Yaa Gyasi's Homegoing is an ambitious and powerful novel which follows the descendants of two half-sisters in Ghana", Title: "The Feel", price: 35, src: "./images/bnl2.png", count: 0 }
+   , { category: "Classics", id: 6, description: " Book Description : " + "Beloved is a 1987 novel by the American writer Toni Morrison. Set after the American Civil War, it tells the story of a family of formerly", Title: "Beloved", price: 25, src: "./images/bnc1.png", count: 0 }
+
+   , { category: "Literary Fiction", id: 7, description: " Book Description : " + "A Clue-like, locked-room mystery and a heartwarming journey of the spirit, The Maid explores what it means to be the same as everyone else and yet entirely", Title: "Maid", price: 35, src: "./images/bnl1.png", count: 0 }
+
+   , { category: "Literary Fiction", id: 8, description: " Book Description : " + "Yaa Gyasi's Homegoing is an ambitious and powerful novel which follows the descendants of two half-sisters in Ghana", Title: "The Feel", price: 35, src: "./images/bnl2.png", count: 0 }
 ]
 
 ///usersArray
@@ -191,17 +191,17 @@ $(".btnlogin").on("click", () => {
 })
 
 
-const goToLogin=()=>{
-   console.log("hind")
+const goToLogin = () => {
+
    $(".logpl").show()
    regesterDiv.hide()
-   
+
    loginDiv.append(loginuserpassdive)
    $(".hidlogen").hide()
 
    $(".btnreqhidden").hide()
-   
-  // login()
+
+   // login()
 }
 
 
@@ -250,25 +250,25 @@ $(".btnreqhidden").on("click", () => {
    loginDiv.append(regesterDiv)
    $(".grenReg").hide()
    $(".goLogin").hide()
-   
-   
-   
+
+
+
 })
 
 
 
- const   RegFun= ()=>{
+const RegFun = () => {
 
 
 
 
 
-  
+
    let newUser = { UserName: $("#RegId").val(), passwrd: $("#passwordId").val() }
    arrayUsers.push(newUser)
    $(".grenReg").show()
    $(".goLogin").show()
-  $(".hideRegestrationbtn").hide()
+   $(".hideRegestrationbtn").hide()
 
 }
 
@@ -290,7 +290,7 @@ const searchFun = (search) => {
    for (i = 0; i < arrayBooks.length; i++) {
 
       if (search.toUpperCase() == arrayBooks[i].Title.toUpperCase()) {
-         console.log("hind")
+
          // $(".content").empty()
          const content = $(".content")
 
@@ -329,9 +329,9 @@ const searchFun = (search) => {
 
 
          btnSeeMore.on("click", function (e) {
-            console.log(e)
-            console.log("r")
-            console.log(e.target.id)
+            //  console.log(e)
+            // console.log("r")
+            // console.log(e.target.id)
             objectId = e.target.id
             //console.log(this)
             //console.log($(this))
@@ -361,7 +361,7 @@ const searchFun = (search) => {
 
 
 
-jQuery(function(){
+jQuery(function () {
    jQuery('.spA').click();
 });
 //contentDiv.append(divSearch)
@@ -371,7 +371,7 @@ jQuery(function(){
 //functions
 arrayhistory = []
 arrayAdven = []
-const mainFun = (categ,data ) => {
+const mainFun = (categ, data) => {
    console.log("hind")
    //debugger
    $(".spanShooping").hide();
@@ -423,8 +423,8 @@ const mainFun = (categ,data ) => {
 
          //const btnSeeMore=$(".seeMoreclass")
          btnSeeMore.on("click", function (e) {
-            console.log(e)
-            console.log(e.target.id)
+            // console.log(e)
+            // console.log(e.target.id)
             objectId = e.target.id
             //console.log(this)
             //console.log($(this))
@@ -451,7 +451,7 @@ const mainFun = (categ,data ) => {
 let cart = JSON.parse(localStorage.getItem("myBookList")) || []
 let sum = 0
 const displyFun = function (objId, element) {
-   console.log(objId)
+   // console.log(objId)
 
    $(".content").hide();
 
@@ -464,7 +464,7 @@ const displyFun = function (objId, element) {
    for (i = 0; i < arrayBooks.length; i++) {
 
       if (objId == arrayBooks[i].id) {
-         console.log("hind")
+
 
          const content = $(".content")
 
@@ -500,7 +500,7 @@ const displyFun = function (objId, element) {
          DivePrice.append(price)
          price.text(arrayBooks[i].price + " JD")
          let bookPrice = arrayBooks[i].price
-         console.log(bookPrice)
+         // console.log(bookPrice)
          const countDiv = $(`<div></div>`)
 
 
@@ -508,7 +508,7 @@ const displyFun = function (objId, element) {
          const inpCoun = $(`<input class="inpaddd" type="number" min="1"   name="" id="">`)
          inpCoun.attr('id', "inpAdd" + arrayBooks[i].id);
          const inpId = "inpAdd" + arrayBooks[i].id
-         console.log(inpId)
+         // console.log(inpId)
          //   const btmMin=$(`<button>-</button>`)
          //   const btnplus=$(`<button>+</button>`)
          //   countDiv.append(btmMin)
@@ -523,12 +523,12 @@ const displyFun = function (objId, element) {
          addDiv.append(btnadd)
          // $(`#${inpId}`).val(1)
          btnadd.on("click", function () {
-            console.log("GGGGGG")
-            console.log(inpId)
-            console.log(arrboki)
+
+            // console.log(inpId)
+            // console.log(arrboki)
             debugger
             ////not
-            if(cart.length==0){
+            if (cart.length == 0) {
                let itemNumber = parseInt(inpCoun.val())
                let newCoun = parseInt(arrboki.count) + itemNumber
                arrboki.count = newCoun
@@ -538,73 +538,73 @@ const displyFun = function (objId, element) {
                localStorage.setItem("myBookList", JSON.stringify(cart));
 
 
-            }else{
+            } else {
 
 
-            for (i = 0; i < cart.length; i++) {
-               if (cart[i].Title == arrboki.Title) {
-                  debugger
+               for (i = 0; i < cart.length; i++) {
+                  if (cart[i].Title == arrboki.Title) {
+                     debugger
 
-                  let itemNumber = parseInt(inpCoun.val())
-                  cart[i].count = cart[i].count + itemNumber
-                  // arrboki.count =newCoun
-                  //  sum = parseInt(sum) + parseInt(itemNumber)
-                  //  $(".spanShoopingClass").text(sum)
+                     let itemNumber = parseInt(inpCoun.val())
+                     cart[i].count = cart[i].count + itemNumber
+                     // arrboki.count =newCoun
+                     //  sum = parseInt(sum) + parseInt(itemNumber)
+                     //  $(".spanShoopingClass").text(sum)
 
-                  //let itemNumber =  parseInt(inpCoun.val())
-                  sum = parseInt(sum) + parseInt(itemNumber)
-                   $(".spanShoopingClass").text(sum)
-                  // localStorage.setItem("myBookList", JSON.stringify(cart));
-         
-            
-            // localStorage.setItem("myBookList", JSON.stringify(cart));
-            //  let itemNumber =  parseInt(inpCoun.val())
-
-            // debugger
-            // sum = parseInt(sum) + parseInt(arrboki.count)
-            //  $(".spanShoopingClass").text(sum)
-            console.log(cart)
+                     //let itemNumber =  parseInt(inpCoun.val())
+                     sum = parseInt(sum) + parseInt(itemNumber)
+                     $(".spanShoopingClass").text(sum)
+                     // localStorage.setItem("myBookList", JSON.stringify(cart));
 
 
+                     // localStorage.setItem("myBookList", JSON.stringify(cart));
+                     //  let itemNumber =  parseInt(inpCoun.val())
 
-////////////////////////
-                 
-         
-dispDiv.append(addDiv)
-///////
+                     // debugger
+                     // sum = parseInt(sum) + parseInt(arrboki.count)
+                     //  $(".spanShoopingClass").text(sum)
+                     // console.log(cart)
 
 
-conten.append(dispDiv)
-add(inpId, bookPrice, bookTitle, arrboki)
 
-return
-                  ///////////////////////
+                     ////////////////////////
 
+
+                     dispDiv.append(addDiv)
+                     ///////
+
+
+                     conten.append(dispDiv)
+                     add(inpId, bookPrice, bookTitle, arrboki)
+
+                     return
+                     ///////////////////////
+
+                  }
                }
+
+
+               ////////////////////////////
+               debugger;
+
+
+
+
+               let itemNumber = parseInt(inpCoun.val())
+               let newCoun = parseInt(arrboki.count) + itemNumber
+               arrboki.count = newCoun
+               sum = parseInt(sum) + parseInt(itemNumber)
+               $(".spanShoopingClass").text(sum)
+               cart.push(arrboki)
+               localStorage.setItem("myBookList", JSON.stringify(cart));
+
+
+
+
+
+
+
             }
-
-
-            ////////////////////////////
-                  debugger;
-
-
-
-
-                  let itemNumber = parseInt(inpCoun.val())
-                  let newCoun = parseInt(arrboki.count) + itemNumber
-                  arrboki.count = newCoun
-                  sum = parseInt(sum) + parseInt(itemNumber)
-                  $(".spanShoopingClass").text(sum)
-                  cart.push(arrboki)
-                  localStorage.setItem("myBookList", JSON.stringify(cart));
-                 
-         
-
-
-
-
-                
-         }
          })
 
 
@@ -651,8 +651,8 @@ const add = function (iptId, bookPrice, bookTitle, elem) {
    debugger
    //newCoun=elem.count +itemNumber
    // elem.count=newCoun
-   console.log("test")
-   
+   //console.log("test")
+
    //if (localStorage.hasOwnProperty(bookTitle)) {
    //localStorage.hasOwnProperty(bookTitle)
    // debugger
@@ -662,7 +662,7 @@ const add = function (iptId, bookPrice, bookTitle, elem) {
    /// let couning = JSON.parse(localStorage.getItem(bookTitle))
    /// localStorage.setItem(bookTitle, JSON.stringify(couning));
 
-  localStorage.setItem("myBookList", JSON.stringify(cart));
+   localStorage.setItem("myBookList", JSON.stringify(cart));
    //counNum=couning[num]
 
    //couning = couning[0]
@@ -860,14 +860,14 @@ DivcontactUs.append($(`<div class="masterfinal">
 </div>`
 )
 
-     
+
 )
 
 
 
-    
-         
-         
+
+
+
 // <!-- cotact us dive -->
 
 
@@ -900,33 +900,33 @@ headDiv.append(head3)
 headDiv.append(head4)
 headDiv.append(head5)
 
-head3.on("click",function(){
-   conten.append(DivcontactUs) 
+head3.on("click", function () {
+   conten.append(DivcontactUs)
    debugger
-console.log("kkkkkkkkkk")
 
-$(".display").hide();
+
+   $(".display").hide();
 
    $(".spanShooping").hide();
    $(".content").hide();
    DivcontactUs.show()
-   
-})
-head1.on("click",function(){
-console.log("jj")
-$(".spanShooping").hide();
-$(".display").hide();
-$(".content").hide();
-DivcontactUs.hide()
-  return $(".content").show();
-  
 
 })
+head1.on("click", function () {
+
+   $(".spanShooping").hide();
+   $(".display").hide();
+   $(".content").hide();
+   DivcontactUs.hide()
+   return $(".content").show();
+
+
+})
 
 
 
-console.log("localStorage")
-console.log(localStorage)
+//console.log("localStorage")
+//console.log(localStorage)
 //const cart = []
 $(".fa-shopping-basket").on("click", function () {
    shoopingItem = Object.entries(localStorage)
@@ -942,14 +942,14 @@ $(".fa-shopping-basket").on("click", function () {
 ///////////////////////////////
 
 
- 
 
 
 
-let checkoutArray=[]
+
+let checkoutArray = []
 
 const shoopingFun = function () {
-  
+
    $(".display").hide()
    ///
 
@@ -975,20 +975,20 @@ const shoopingFun = function () {
    //ShopingDiv.append(diveTable)
    //divTable.append(mytable)
 
- //  const TitlebtmMinDiv = $(`<div class=""></div>`)
-  // const TbtmMin = $(`<h3 class="show">Min</h3>`)
+   //  const TitlebtmMinDiv = $(`<div class=""></div>`)
+   // const TbtmMin = $(`<h3 class="show">Min</h3>`)
 
-  // TitlebtmMinDiv.append(TbtmMin)
-    //  ShopingItemDiv.append(TitlebtmMinDiv)
+   // TitlebtmMinDiv.append(TbtmMin)
+   //  ShopingItemDiv.append(TitlebtmMinDiv)
 
 
-    const increaseDiv = $(`<div class="ShopingItemDivclass"><h3 class="w">minus</h3><h3>Taitle Book</h3><h3>plus</h3><h3> Numbers</h3><h3>Price </h3><h3>Total  </h3><h3>Delete</h3></div>`)
-    ShopingDiv.append(increaseDiv)
+   const increaseDiv = $(`<div class="ShopingItemDivclass"><h3 class="w">minus</h3><h3>Taitle Book</h3><h3>plus</h3><h3> Numbers</h3><h3>Price </h3><h3>Total  </h3><h3>Delete</h3></div>`)
+   ShopingDiv.append(increaseDiv)
 
    for (i = 0; i < cart.length; i++) {
 
 
-      
+
 
       const ShopingItemDiv = $(`<div class="ShopingItemDivclass"></div>`)
       const btmMinDiv = $(`<div class="min"></div>`)
@@ -1007,7 +1007,7 @@ const shoopingFun = function () {
 
 
       let mytitale = cart[i].Title
-      console.log(mytitale)
+      //console.log(mytitale)
 
 
 
@@ -1034,8 +1034,8 @@ const shoopingFun = function () {
       const nubberDiv = $(`<div class=""></div>`)
       //  m = JSON.parse(cart[i])
 
-      nubberDiv.append(countAdd= cart[i].count)
-      priceDiv.append(PriceAdd=cart[i].price)
+      nubberDiv.append(countAdd = cart[i].count)
+      priceDiv.append(PriceAdd = cart[i].price)
       ShopingItemDiv.append(nubberDiv)
       ShopingItemDiv.append(priceDiv)
 
@@ -1043,148 +1043,149 @@ const shoopingFun = function () {
 
       const btmDeleteAll = $(`<button class="btndanger">Delete</button>`)
       deletDiv.append(btmDeleteAll)
-     
+
 
 
 
       const totalDiv = $(`<div class=""></div>`)
 
 
-      
+
       let total = (cart[i].count) * (cart[i].price)
-      
+
       totalDiv.append(total)
       ShopingItemDiv.append(totalDiv)
       ShopingItemDiv.append(deletDiv)
       //checkoutArray=[]
       checkoutArray.push(total)
       btmMin.on("click", function () {
-         DletOneItem(mytitale,total)
+         DletOneItem(mytitale, total)
       })
 
       btnplus.on("click", (e) => {
-       
-          addOneItem(mytitale,total)
-      // checkoutArray=[]
-      // checkoutArray.push(total)
-      //   totalDiv.append(total)
 
-        
+         addOneItem(mytitale, total)
+         // checkoutArray=[]
+         // checkoutArray.push(total)
+         //   totalDiv.append(total)
+
+
 
       })
 
       btmDeleteAll.on("click", function () {
-       
-         remove(mytitale,total)
+
+         remove(mytitale, total)
 
       })
 
 
 
-     
+
       ShopingDiv.append(ShopingItemDiv)
    }
 
    const checkOutDiv = $(`<div class=""></div>`)
    const btnOutcheck = $(`<button class="btncheck">CheckOut</button>`)
 
-checkOutDiv.append(btnOutcheck)
-ShopingDiv.append(checkOutDiv)
-const checkOutLableDiv = $(`<div class=""></div>`)
-const checkOutLable = $(`<label class="totalLableSum" for=""></label>`)
-checkOutLableDiv.append(checkOutLable)
-//checkOutDiv.append(checkOutLable
-//)
-ShopingDiv.append(checkOutLableDiv)
-btnOutcheck.on("click",()=>{
-   
-  // $(".spanShooping").empty()
-   checkOutFun()
-  // checkoutArray.push(total)
-   
+   checkOutDiv.append(btnOutcheck)
+   ShopingDiv.append(checkOutDiv)
+   const checkOutLableDiv = $(`<div class=""></div>`)
+   const checkOutLable = $(`<label class="totalLableSum" for=""></label>`)
+   checkOutLableDiv.append(checkOutLable)
+   //checkOutDiv.append(checkOutLable
+   //)
+   ShopingDiv.append(checkOutLableDiv)
+   btnOutcheck.on("click", () => {
+
+      // $(".spanShooping").empty()
+      checkOutFun()
+      // checkoutArray.push(total)
+
    })
 }
 
 
 
-const addOneItem=(title,total)=>{
+const addOneItem = (title, total) => {
    debugger
-   for(i=0;i<cart.length;i++)
-   if(cart[i].Title==title){
-    debugger
-   // total = total + PriceAdd
- 
-  
-    cart[i].count=cart[i].count+1
-   
-  localStorage.setItem("myBookList", JSON.stringify(cart));
-  //$( ".ShopingItemDivclass.empty").empty();
-  $(".spanShooping").empty()
-   // shoopingFun()
-   //$(".spanShooping").empty()
-   checkoutArray=[]
-    shoopingFun()
-   checkoutArray.push(total)
-   checkoutArray.pop()
-}
-}
+   for (i = 0; i < cart.length; i++)
+      if (cart[i].Title == title) {
+         debugger
+         // total = total + PriceAdd
 
-const DletOneItem=(title,total)=>{
-   for(i=0;i<cart.length;i++){
-   if(cart[i].Title==title){
-  
-   // total = total + PriceAdd
-    
-  
-    cart[i].count=cart[i].count-1
-  localStorage.setItem("myBookList", JSON.stringify(cart));
-  $(".spanShooping").empty()
-   
-    checkoutArray=[]
-    shoopingFun()
-    checkoutArray.push(total)
-    checkoutArray.pop()
-}}
+
+         cart[i].count = cart[i].count + 1
+
+         localStorage.setItem("myBookList", JSON.stringify(cart));
+         //$( ".ShopingItemDivclass.empty").empty();
+         $(".spanShooping").empty()
+         // shoopingFun()
+         //$(".spanShooping").empty()
+         checkoutArray = []
+         shoopingFun()
+         checkoutArray.push(total)
+         checkoutArray.pop()
+      }
 }
 
+const DletOneItem = (title, total) => {
+   for (i = 0; i < cart.length; i++) {
+      if (cart[i].Title == title) {
 
-const remove =(title,total)=>{
-   
-   for(i=0;i<cart.length;i++){
-     
-      cart= cart.filter((elem,I)=>{
-     return elem.Title!=title
-     localStorage.setItem("myBookList", JSON.stringify(cart));
-      shoopingFun()
+         // total = total + PriceAdd
 
-   })
+
+         cart[i].count = cart[i].count - 1
+         localStorage.setItem("myBookList", JSON.stringify(cart));
+         $(".spanShooping").empty()
+
+         checkoutArray = []
+         shoopingFun()
+         checkoutArray.push(total)
+         checkoutArray.pop()
+      }
+   }
+}
+
+
+const remove = (title, total) => {
+
+   for (i = 0; i < cart.length; i++) {
+
+      cart = cart.filter((elem, I) => {
+         return elem.Title != title
+         localStorage.setItem("myBookList", JSON.stringify(cart));
+         shoopingFun()
+
+      })
    }
    localStorage.setItem("myBookList", JSON.stringify(cart));
    $(".spanShooping").empty()
-      
-      checkoutArray=[]
-      shoopingFun()
-      checkoutArray.push(total)
-      checkoutArray.pop()
+
+   checkoutArray = []
+   shoopingFun()
+   checkoutArray.push(total)
+   checkoutArray.pop()
    //   checkoutArray.push(total)
 }
 
-const checkOutFun=()=>{
- 
-debugger
+const checkOutFun = () => {
 
-let m= checkoutArray.reduce((acc, onTotle )=>{
-  return acc=acc+onTotle
-   
-   
-   },0)
+   debugger
 
-   
-   $(".totalLableSum").text("Your total Account is:" +m +"\n" + "  Your Check Out Copleted")
+   let m = checkoutArray.reduce((acc, onTotle) => {
+      return acc = acc + onTotle
 
-                           
-cart=[]
-localStorage.clear()
+
+   }, 0)
+
+
+   $(".totalLableSum").text("Your total Account is:" + m + "\n" + "  Your Check Out Copleted")
+
+
+   cart = []
+   localStorage.clear()
 }
 
 
