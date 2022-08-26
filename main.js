@@ -1,38 +1,124 @@
 
-// const array=[]
-
-// $.ajax({
-// url:	"https://api.itbook.store/1.0/new",
-// success:function(data){
-//    alert("hi")
 
 
-//    let apiArrayBooks=data.books
-//    mainFun(data.books)
-//    arrayBooks.Title=data.books.title
-//    //console.log(data)
-//    array.push(data)
-//    console.log("inside",array)
-//   // console.log(data.books)
-//    arrayBooks.Description=data.books.subtitle
-//    let apidata=data.books
-//    //arrayBooks.imgDiv=data.books
-// },
-// error:function(){
-//    alert("gfd")
-//    console.log("error")
-// }
+//   head2.on("click", function () {
+
+//    $(".spanShooping").hide();
+//    $(".display").hide();
+//    $(".content").hide();
+//    DivcontactUs.hide();
+//    newBookFun()
 
 
 // })
+   
+const array=[]
+
+$.ajax({
+url:	"https://api.itbook.store/1.0/new",
+success:function(data){
+   
+   head2.on("click", function () {
+
+      $(".spanShooping").hide();
+      $(".display").hide();
+      $(".content").hide();
+      DivcontactUs.hide();
+      newBookFun()
+   
+   
+   })
+   
+
+   let apiArrayBooks=data.books
+   mainFun(data.books)
+   arrayBooks.Title=data.books.title
+   //console.log(data)
+   array.push(data)
+
+   console.log("inside",array)
+  console.log(array[0].books)
+  const mynewBooksList=array[0].books
+
+   let apidata=data.books
+   //arrayBooks.imgDiv=data.books
+
+   
+debugger
+   
+   const newBookFun=()=>{
+      debugger
+      // conten.append(AboutUsDv);
 
 
 
-// console.log("out",array)
+      const conabout = $(".content")
+      console.log("ljhg")
+      const AboutUsDv = $(`<div class="AboutUsDv"></div>`)
+      conten.append(AboutUsDv);
+for(i=0;i<mynewBooksList.length;i++){
+ const b=  mynewBooksList[i].title
+   // <!-- about us dive -->
+console.log(b)
+
+const AboutUs = $(`<div class="AboutUs">  </div>`)
+const titleDiv = $(`<div class="titleDiv">  </div>`)
+titleDiv.append(`<h3> ${b}</h3>`)
+AboutUs .append(titleDiv)
+AboutUsDv.append(AboutUs)
+const divImg = $(`<div class="imgUs">  </div>`)
+const imgUs=$(`<img src=${mynewBooksList[i].image} alt="mm">`)
+//imgUs.attr('src', mynewBooksList[i].image)
+divImg.append(imgUs)
+AboutUs.append(divImg)
+AboutUsDv.append(AboutUs)
+// <!-- about us dive -->
+const descriptionDiv = $(`<div class="descriptionDiv">  </div>`)
+
+const urlDiv = $(`<a  target="_blank" href=${mynewBooksList[i].url}>book link </a>`)
+descriptionDiv.append(urlDiv)
+AboutUs.append(descriptionDiv)
+AboutUsDv.append(AboutUs)
+  // const content = $(".content")
+  // const DivNewBook = $(`<div class="DivNewBook">
+  //</div>`)
+
+}
+
+//searchFun(mynewBooksList[i].title)
+   }
 
 
 
 
+   
+
+
+},
+error:function(){
+   
+   console.log("error")
+}
+
+
+})
+
+
+
+console.log("out",array)
+
+
+
+// head2.on("click", function () {
+//    debugger
+//       $(".spanShooping").hide();
+//       $(".display").hide();
+//       $(".content").hide();
+//       DivcontactUs.hide();
+//     conten.append(AboutUsDv);
+   
+   
+//    })
 
 
 
@@ -215,7 +301,7 @@ const login = () => {
          spDiv.show()
          conten.show()
          $(".head4").text(`Welcome: ${arrayUsers[i].UserName}`)
-         console.log("hind")
+         
          return $(".hidlogen").hide()
       } else {
 
@@ -281,7 +367,7 @@ const RegFun = () => {
 
 
 const searchFun = (search) => {
-   //debugger
+   debugger
    $(".AboutUsDv").hide();
    $(".display").hide();
    DivcontactUs.hide()
@@ -350,6 +436,68 @@ const searchFun = (search) => {
          content.append(DivContent)
 
 
+      }else if(search.toUpperCase()==array[0].books[i].title.toUpperCase()){
+
+                  // $(".content").empty()
+                  const content = $(".content")
+
+
+                  const DivContent = $(`<div class="DivContent ">
+                  </div>`)
+         
+                  const imgDiv = $(`<img >`)
+                  imgDiv.addClass("gridImg")
+         
+                  // <div><img class=imgbook></div>
+                  imgDiv.attr('src',array[0].books[i].image )
+                  //imgDiv.attr('class',"gridImg")
+                  DivContent.append(imgDiv)
+                  const DiveTitle = $(`<div></div>`)
+                  const title = $(`<h3></h3>`)
+                  DivContent.append(DiveTitle)
+                  DiveTitle.append(title)
+                  title.text(array[0].books[i].title)
+                  const DivePrice = $(`<div></div>`)
+                  const price = $(`<h3></h3>`)
+                  DivContent.append(DivePrice)
+                  DivePrice.append(price)
+                  price.text(array[0].books[i].price + "JD")
+         
+         
+         
+         
+                  // const DiveSeeMore = $(`<div> </div>`)
+                  // const btnSeeMore = $(`<button class="seeMoreclass" >see more</button>`)
+         
+                  // btnSeeMore.attr('id', array[0].books[i].id);
+                  // DivContent.append(DiveSeeMore)
+                  // DiveSeeMore.append(btnSeeMore)
+         
+         
+         
+                  // btnSeeMore.on("click", function (e) {
+                  //    //  console.log(e)
+                  //    // console.log("r")
+                  //    // console.log(e.target.id)
+                  //    objectId = e.target.id
+                  //    //console.log(this)
+                  //    //console.log($(this))
+                  //    //  console.log($(this).parent())
+         
+                  //    //console.log($(this).parent().children())
+                  //    displyFun(objectId, arrayBooks[i])
+                  // })
+         
+         
+         
+         
+         
+         
+                  content.append(DivContent)
+         
+
+
+
       }
 
 
@@ -373,7 +521,7 @@ jQuery(function () {
 arrayhistory = []
 arrayAdven = []
 const mainFun = (categ, data) => {
-   console.log("hind")
+  
    //debugger
    $(".spanShooping").hide();
    $(".AboutUsDv").hide();
@@ -819,12 +967,12 @@ FictionEvent.on("click", function () {
 
 
 
-// <!-- about us dive -->
-const conabout = $(".content")
-const AboutUsDv = $(`<div class="AboutUsDv"></div>`)
-const AboutUs = $(`<div class="AboutUs"></div>`)
-AboutUsDv .append(AboutUs)
-// <!-- about us dive -->
+// // <!-- about us dive -->
+// const conabout = $(".content")
+// const AboutUsDv = $(`<div class="AboutUsDv"></div>`)
+// const AboutUs = $(`<div class="AboutUs"></div>`)
+// AboutUsDv .append(AboutUs)
+// // <!-- about us dive -->
 
 
 // <!-- cotact us dive -->
@@ -856,7 +1004,7 @@ DivcontactUs.append($(`<div class="masterfinal">
 <hr>
 <input type="text" id="fname" name="firstname" placeholder="Your name..">
 <input type="text" id="lname" name="lastname" placeholder="Subject">
-<input type="text" id="lname" name="lastname" placeholder="Email">
+<input type="text" id="ln" name="lastname" placeholder="Email">
 <textarea id="w3review" name="w3review" rows="4" cols="25" placeholder="Message">
     
     </textarea>
@@ -930,16 +1078,16 @@ head1.on("click", function () {
 })
 
 
-head2.on("click", function () {
+// head2.on("click", function () {
 
-   $(".spanShooping").hide();
-   $(".display").hide();
-   $(".content").hide();
-   DivcontactUs.hide();
-  conten.append(AboutUsDv);
+//    $(".spanShooping").hide();
+//    $(".display").hide();
+//    $(".content").hide();
+//    DivcontactUs.hide();
+//    newBookFun()
 
 
-})
+// })
 
 
 
@@ -967,9 +1115,13 @@ $(".fa-shopping-basket").on("click", function () {
 let checkoutArray = []
 
 const shoopingFun = function () {
+
    $(".AboutUsDv").hide();
    $(".display").hide()
-   ///
+   
+  checkoutArray.shift()
+ 
+   checkoutArray.pop()
 
    $(".content").hide();
 
@@ -1074,8 +1226,9 @@ const shoopingFun = function () {
       totalDiv.append(total)
       ShopingItemDiv.append(totalDiv)
       ShopingItemDiv.append(deletDiv)
-      //checkoutArray=[]
+     // checkoutArray.shift()
       checkoutArray.push(total)
+      //checkoutArray.pop()
       btmMin.on("click", function () {
          DletOneItem(mytitale, total)
       })
@@ -1098,7 +1251,9 @@ const shoopingFun = function () {
       })
 
 
-
+     // checkoutArray.pop()
+    
+      //checkoutArray.push(total)
 
       ShopingDiv.append(ShopingItemDiv)
    }
@@ -1140,7 +1295,7 @@ const addOneItem = (title, total) => {
          $(".spanShooping").empty()
          // shoopingFun()
          //$(".spanShooping").empty()
-         checkoutArray = []
+        // checkoutArray = []
          shoopingFun()
          checkoutArray.push(total)
          checkoutArray.pop()
